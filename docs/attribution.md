@@ -15,13 +15,15 @@ Lehmann credits [Andrej Karpathy's LLM Council](https://github.com/karpathy/llm-
 
 ## Changes in this adaptation
 
-- Replaced Claude-specific execution guidance with one shared skill and six native adapters: Codex, Cursor, Command Code, Grok Build, OpenCode, and Factory Droid.
+- Replaced Claude-specific execution guidance with one shared skill and seven native adapters: Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code.
 - Split the entrypoint, shared assignments, and conditional execution references so each harness reads only relevant instructions.
 - Made fresh reviewer contexts, complete input handoffs, round barriers, completion collection, and capacity-aware batching explicit.
 - Kept model selection in harness configuration and inherited defaults, with no dependency on one model family.
 - Added a neutral decision brief and clearer evidence/assumption boundaries. The Contrarian need not invent a flaw, the Outsider receives the same decision facts, and reviewers need not manufacture an omission.
 - Made the chair weigh reasoning over votes and preserve well-supported dissent. Removed claims that council agreement guarantees trustworthy or correct conclusions.
 - Required reporting of incomplete rounds, isolation limits, known model settings, and unresolved evidence; retained both artifacts with safe, matching filenames.
+
+The Claude adapter added in v0.2.0 follows this shared framework and its existing assignments; it does not restore the original Claude-specific implementation.
 
 These are portability and reliability refinements, including the stated adjustments to lens wording. They preserve the council's three-stage structure.
 

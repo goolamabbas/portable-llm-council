@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-09-07
+
+- Add Claude Code support, including local Code sessions in Claude Desktop, with three native roles and one conditional execution reference: seven adapters and 21 role definitions in total.
+- Keep one shared SKILL.md and unchanged council assignments; document fresh non-fork dispatch, text-only workers, model inheritance, and ambient-instruction limits.
+- Add personal copy/symlink installation options, project installation paths, and Claude design decisions.
+- Record static and Claude CLI format checks separately from untested runtime discovery and full council execution. Cowork, Chat, and cloud deployment are outside this adapter's scope.
+- Clarify current adapter coverage and welcome contributions for future harness support.
+
 ## 0.1.0
 
 - Package one shared LLM Council skill with native Codex, Cursor, Command Code, Grok Build, OpenCode, and Factory Droid subagents: three role definitions per harness, 18 total.
@@ -10,4 +18,4 @@
 - Add MIT licensing for the maintainer's contributions, with an explicit upstream-terms limitation.
 - Exclude personal backups, historical working documents, and installation state from the release.
 
-No Claude Code adapter is included. Static validation does not establish successful runtime execution across the supported harnesses.
+Version 0.1.0 did not include a Claude Code adapter. Static validation does not establish successful runtime execution across the supported harnesses.

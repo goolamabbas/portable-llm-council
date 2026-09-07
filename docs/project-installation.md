@@ -11,6 +11,7 @@ Copy the complete shared `llm-council/` folder, including references, into the s
 | Command Code | `.agents/skills/llm-council/` | `.commandcode/agents/` | `commandcode-llm-council/commandcode-subagents/*.md` |
 | Grok Build | `.grok/skills/llm-council/` | `.grok/agents/` | `grok-llm-council/grok-subagents/*.md` |
 | OpenCode | `.agents/skills/llm-council/` | `.opencode/agents/` | `opencode-llm-council/opencode-subagents/*.md` |
+| Claude Code (including Desktop local Code) | `.claude/skills/llm-council/` | `.claude/agents/` | `claude-llm-council/claude-subagents/*.md` |
 | Factory Droid | `.agents/skills/llm-council/` | `.factory/droids/` | `droid-llm-council/droid-subagents/*.md` |
 
 For example, from the downloaded package root, install for Factory Droid into your chosen project:
@@ -22,7 +23,9 @@ cp -R -n llm-council "$council_project/.agents/skills/"
 cp -n droid-llm-council/droid-subagents/*.md "$council_project/.factory/droids/"
 ```
 
-Use the corresponding destinations and role files from the table for another harness. `-n` skips existing files; deliberately back up and replace older copies when updating. These are the same shared skill contents, not a separate methodology per harness. Grok's documented project skill location differs; if using it alongside another harness, keep any necessary deployed copies synchronized.
+Use the corresponding destinations and role files from the table for another harness. `-n` skips existing files; deliberately back up and replace older copies when updating. These are the same shared skill contents, not a separate methodology per harness. Claude and Grok use their own documented project skill locations; if using either alongside another harness, keep any necessary deployed copies synchronized.
+
+For Claude, copy the same complete skill into `.claude/skills/llm-council/`; no Claude-specific SKILL.md is needed. A personal Claude skill can take precedence over its project copy, while project agents take precedence over personal agents. Check both resolutions independently. Desktop local Code sessions are covered; Cowork and cloud deployment are not.
 
 Start the harness in the target project and verify the resolved skill and all three roles. Existing personal definitions can still be discovered: project-only installation does not disable them. Avoid same-name copies where possible and inspect which definition is effective. In particular, Command Code documents personal agents loading before project agents with the first name winning, while Codex skills can both appear in selectors. Do not assume universal project precedence.
 
@@ -40,3 +43,4 @@ Checked September 7, 2026 using native retrieval; no provider fallback was neede
 - Grok Build: [skills](https://docs.x.ai/build/features/skills-plugins-marketplaces), [agent profiles and file locations](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-shell/README.md).
 - OpenCode: [skills](https://opencode.ai/docs/skills/), [agents](https://opencode.ai/docs/agents/).
 - Factory Droid: [skills](https://docs.factory.ai/harness/skills), [subagents](https://docs.factory.ai/harness/subagents).
+- Claude Code: [skills](https://code.claude.com/docs/en/skills), [subagents](https://code.claude.com/docs/en/sub-agents), [Desktop](https://code.claude.com/docs/en/desktop).

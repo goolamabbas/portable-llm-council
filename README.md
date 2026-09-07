@@ -1,6 +1,6 @@
 # Portable LLM Council
 
-One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, and Factory Droid**.
+One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
 
 Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript.
 
@@ -40,7 +40,7 @@ Five advisors means five separate instances of the advisor role; you install onl
 
 ## Supported installations
 
-The commands below install for your user account across projects. For availability within one repository, copy the skill and your harness's three roles into that project instead. See [project-only installation](docs/project-installation.md) for all six directory mappings and an example. Neither scope requires installing the other harnesses.
+The commands below install for your user account across projects. For availability within one repository, copy the skill and your harness's three roles into that project instead. See [project-only installation](docs/project-installation.md) for all seven directory mappings and an example. Neither scope requires installing the other harnesses.
 
 | Harness | Personal skill directory | Personal agent directory | Execution details |
 | --- | --- | --- | --- |
@@ -50,12 +50,13 @@ The commands below install for your user account across projects. For availabili
 | Grok Build | Same shared directory | `~/.grok/agents/` | [Grok Build notes](llm-council/references/grok-build.md) |
 | OpenCode | Same shared directory | `~/.config/opencode/agents/` | [OpenCode notes](llm-council/references/opencode.md) |
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
+| Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude.md) |
 
-These are specific adapter targets, not a promise of universal harness compatibility. Claude Code, Claude Cowork, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets in this release. Claude support is not required to use the six supplied adapters.
+These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets. See [Claude design decisions](docs/claude-support.md) and [validation status](docs/validation.md) for scope and evidence limits.
 
 ### Install the shared skill once
 
-Download GitHub’s automatic “Source code (zip)” asset from a release and extract it, or clone this repository. Open a terminal in the extracted repository directory. The following examples use a macOS/Linux shell.
+Download GitHub’s automatic “Source code (zip)” asset from a release and extract it, or clone this repository. Open a terminal in the extracted repository directory. The following examples use a macOS/Linux shell. For Claude-only use, skip this shared-directory block and use the Claude block below. If you already use another harness, the Claude symlink option reuses this shared installation.
 
 ```bash
 mkdir -p "$HOME/.agents/skills"
@@ -118,6 +119,32 @@ Factory Droid uses the shared skill directory. Check `/skills` and `/droids` for
 
 The adapter requests analysis from supplied inputs and documents Factory's mandatory-tool limitation. Check [Droid execution notes](llm-council/references/factory-droid.md) before running. Installation commands are provided for later use; the package preparation does not execute them.
 
+**Claude Code / Claude Desktop local Code**
+
+For a fresh Claude-only installation, copy the same shared skill into Claude's discovery directory and install its three roles:
+
+```bash
+mkdir -p "$HOME/.claude/skills" "$HOME/.claude/agents"
+cp -R -n llm-council "$HOME/.claude/skills/"
+cp -n claude-llm-council/claude-subagents/*.md "$HOME/.claude/agents/"
+```
+
+Alternatively, if the current shared skill is already installed at `~/.agents/skills/llm-council/`, use this block **instead** to expose that one copy to Claude:
+
+```bash
+mkdir -p "$HOME/.claude/skills" "$HOME/.claude/agents"
+if [ ! -e "$HOME/.claude/skills/llm-council" ] && [ ! -L "$HOME/.claude/skills/llm-council" ]; then
+  ln -s "$HOME/.agents/skills/llm-council" "$HOME/.claude/skills/llm-council"
+else
+  echo "Claude skill destination already exists; inspect it before updating."
+fi
+cp -n claude-llm-council/claude-subagents/*.md "$HOME/.claude/agents/"
+```
+
+Refresh an older shared skill before linking it. Claude supports skill-directory symlinks; copy the whole folder when symlinks are unsuitable. There is no separate Claude SKILL.md. [Claude skill discovery](https://code.claude.com/docs/en/skills)
+
+The supplied roles request no tools and return analysis from the coordinator's inputs. Read the [Claude execution notes](llm-council/references/claude.md) for fresh-worker dispatch and ambient-instruction limits. If another installed harness also discovers `.claude` directories, check which same-named role it resolves; do not assume this installation is invisible to it.
+
 Restart the harness or start a new session, then verify that it discovers the intended skill and all three native roles. Files on disk alone do not establish registration. The optional `llm-council/agents/openai.yaml` provides Codex presentation metadata; it is not a worker definition.
 
 For remote sessions, install on the host actually executing the agents and verify discovery there. This package does not automatically transfer personal files to remote or cloud environments. Local execution may still use a remote model API.
@@ -147,10 +174,10 @@ Then run a small decision through the council. Check for five advisor answers, f
 ## Package layout
 
 - `llm-council/`: the sole maintained skill, shared assignments, conditional execution references, and optional Codex metadata.
-- `*-llm-council/*-subagents/`: three native agent definitions for each of the six harnesses.
+- `*-llm-council/*-subagents/`: three native agent definitions for each of the seven harnesses.
 - `docs/`: usage guidance, attribution, validation status, and release notes.
 
-Contributions should preserve one shared methodology and keep harness-specific behavior in adapters. For compatibility reports, include harness version, model, which rounds completed, and any isolation or permission limitations. Remove private decision content before sharing transcripts.
+Forks and pull requests for additional harnesses and compatibility improvements are welcome. Contributions should preserve one shared methodology and keep harness-specific behavior in adapters. For compatibility reports, include harness version, model, which rounds completed, and any isolation or permission limitations. Remove private decision content before sharing transcripts.
 
 ## License and credits
 

@@ -11,7 +11,7 @@ Help the user examine a decision beyond the framing and assumptions in their que
 
 Frame a neutral decision brief from the user's question and relevant available context: objectives, options, constraints, stakes, facts, and unknowns. Gather context proportionately; ask when a missing detail would materially change the question. Keep evidence distinguishable from assumptions.
 
-Read [subagent assignments](references/subagents.md) for the roles and their inputs. Use the current harness's available subagent tools. When dispatch, isolation, capacity, or role selection needs clarification, read only the matching adapter: [Codex](references/codex.md), [Cursor](references/cursor.md), [Command Code](references/commandcode.md), [Grok Build](references/grok-build.md), [OpenCode](references/opencode.md), or [Factory Droid](references/factory-droid.md). Identify the harness from the active environment, not the selected model. Other harnesses require capability verification before use.
+Read [subagent assignments](references/subagents.md) for the roles and their inputs. Use the current harness's available subagent tools. When dispatch, isolation, capacity, or role selection needs clarification, read only the matching adapter: [Codex](references/codex.md), [Cursor](references/cursor.md), [Command Code](references/commandcode.md), [Grok Build](references/grok-build.md), [OpenCode](references/opencode.md), [Factory Droid](references/factory-droid.md), or [Claude Code](references/claude.md). Identify the harness from the active environment, not the selected model. Other harnesses require capability verification before use.
 
 ## Run the council
 

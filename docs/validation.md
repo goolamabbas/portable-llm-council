@@ -1,11 +1,12 @@
 # Validation status
 
-This release separates documented compatibility from observed execution. Earlier harness references were researched on September 6, 2026. OpenCode documentation/source and Factory Droid documentation were inspected on September 7, 2026.
+This release separates documented compatibility from observed execution. Earlier harness references were researched on September 6, 2026. OpenCode documentation/source and Factory Droid documentation were inspected on September 7, 2026. Claude documentation and local CLI format validation were checked on the same date.
 
 | Check | Status |
 | --- | --- |
-| Shared skill and 18 native role definitions | One SKILL.md in the package; each of six harnesses has three roles. Droid adds a conditional reference without changing shared assignments or the prior 15 roles. |
-| File formats and relative links | Checked during packaging. |
+| Shared skill and 21 native role definitions | One SKILL.md in the package; each of seven harnesses has three roles. Claude adds a conditional reference without changing shared assignments or the prior 18 roles. |
+| File formats and relative links | YAML/TOML parsing, local links, unchanged prior roles/assignments, and staging/package equality checked for v0.2.0. |
+| Claude native format validation | Installed Claude Code 2.1.261 strict validator accepted disposable copies under conventional `.claude/agents/` and `.claude/skills/` paths. This is not live discovery or execution. |
 | Command Code skill discovery | Confirmed in an earlier personal installation through its live skill listing. This is not proof of agent execution. |
 | Grok Build skill and agent discovery | Confirmed in an earlier personal installation with `grok inspect`. This is not proof of effective permissions, model routing, or reviewer isolation. |
 | Codex and Cursor installation | Previously copied and compared with staged files; no complete runtime validation record is bundled. |
@@ -52,3 +53,13 @@ Native search and retrieval successfully read [skills](https://docs.factory.ai/h
 See the [Droid reference](../llm-council/references/factory-droid.md) for discovery, lifecycle, models, and tool boundaries. The empty optional-tool list is an adapter choice based on the documented array format, not a live-tested validator result. The role prompts derive from the shared advisor, reviewer, and chair input/output requirements. They restrict additional context and skill loading without banning task tracking. Foreground and background execution are equally acceptable when round barriers hold. These choices do not change council methodology or guarantee runtime isolation.
 
 Static validation covers YAML/TOML parsing, documented field shapes, unchanged prior roles and assignments, one skill/18 roles, staging-to-package equality, and local links. Runtime discovery, acceptance of the empty list, actual tools/models, fresh-review isolation, parallel completion, 11-worker execution, and remote behavior remain untested. No Droid process or personal installation was changed. Validation uses Ruby YAML and Python TOML/direct checks; the skill-creator quick validator remains unavailable without PyYAML. No dependency was installed. Newly added external links were retrieved; older external links were not re-audited.
+
+## Claude adaptation — September 7, 2026
+
+Native web retrieval successfully read Anthropic's [subagents](https://code.claude.com/docs/en/sub-agents), [skills](https://code.claude.com/docs/en/skills), [Desktop](https://code.claude.com/docs/en/desktop), and [empty-tool behavior](https://code.claude.com/docs/en/errors#agent-would-be-spawned-with-zero-tools) documentation. The available provider surface was inspected; no specialized external dataset was needed. No provider fallback or failed documentation retrieval contributed to this adapter.
+
+The installed Claude Code CLI reported version 2.1.261. Its strict validator rejected the package's arbitrary source directory names as missing plugin manifests; no plugin manifest was added. Disposable copies under conventional `.claude/agents/` and `.claude/skills/` directories passed. An invalid control file made strict validation fail, confirming that the validator inspected the directory; the control was removed. These are format checks, not a model run or a personal installation.
+
+Ruby YAML and Python TOML/direct checks cover metadata, exactly one skill and 21 roles, unchanged prior roles and shared assignments, local links, and staging/package equality. The skill-creator Python validator could not start because PyYAML is unavailable; no dependency was installed. Claude CLI checks and independent parsing are the recorded substitutes.
+
+Claude live discovery, effective empty-tool enforcement and model routing, ambient-instruction isolation, five-advisor/five-reviewer/chair execution, artifact quality, and remote operation remain untested. No model council was launched, and no personal installation was changed. The release provides a documented adapter, not an end-to-end compatibility certification.
