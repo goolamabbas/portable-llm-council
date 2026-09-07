@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-09-07
+
+- Add a copyable prompt for installing the skill and relevant agents through your AI assistant.
+- Explain backups, file-change approval, discovery checks, and when a new session may be needed.
+- Documentation only; council behavior and native agent definitions are unchanged.
+
 ## 0.2.0 — 2026-09-07
 
 - Add Claude Code support, including local Code sessions in Claude Desktop, with three native roles and one conditional execution reference: seven adapters and 21 role definitions in total.

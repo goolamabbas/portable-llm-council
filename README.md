@@ -54,6 +54,20 @@ The commands below install for your user account across projects. For availabili
 
 These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
 
+### Ask your assistant to install
+
+In a supported harness, you can ask the assistant to handle installation:
+
+```text
+Read the installation instructions at
+https://github.com/goolamabbas/portable-llm-council
+and install the shared skill and the agent definitions for this harness
+in my personal installation locations. Back up existing copies before
+replacing anything, then verify discovery. Do not run a council yet.
+```
+
+Your assistant may request approval for file changes. You may need to start a new session before it can verify discovery. Manual installation instructions follow below.
+
 ### Install the shared skill once
 
 Download GitHub’s automatic “Source code (zip)” asset from a release and extract it, or clone this repository. Open a terminal in the extracted repository directory. The following examples use a macOS/Linux shell. For Claude-only use, skip this shared-directory block and use the Claude block below. If you already use another harness, the Claude symlink option reuses this shared installation.
