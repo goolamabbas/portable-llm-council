@@ -1,6 +1,6 @@
 # When to use the council
 
-Use the council when a decision has meaningful consequences and examining competing arguments could change what you do. You do not need a huge company or a particular budget. A week of scarce time can matter more than a large expense that is easy to reverse.
+Use the council when a decision has meaningful consequences and examining competing arguments could change what you do. You do not need a huge company or a particular budget. Consider what a wrong decision would cost you in time, money, or missed opportunities, and how difficult it would be to undo.
 
 The full council uses 11 worker runs and asks you to read a synthesis. It costs more time and model usage than one response. These guidelines are practical heuristics, not a benchmark proving when the council outperforms a single assistant.
 
