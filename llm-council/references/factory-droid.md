@@ -8,7 +8,7 @@ Send the complete relevant [assignment](subagents.md) and required inputs every 
 
 Definitions use `model: inherit`. Omit dispatch `complexity` to avoid tier routing. Optional per-role pins use public model IDs or `custom:` plus the BYOK model field; unavailable pins can fall back to the parent. `reasoningEffort` is ignored with inheritance. Record effective models. [Model selection](https://docs.factory.ai/harness/subagents#model-selection)
 
-`tools: []` requests no optional tools; `mcpServers: []` excludes MCP. Omitting `tools` grants broad access. `TodoWrite` and `Skill` remain available. Thus these workers are not tool-free. Empty-array acceptance and effective restrictions need runtime confirmation. [Tool policy](https://docs.factory.ai/harness/subagents#configuration)
+`tools: []` requests no optional tools; `mcpServers: []` excludes MCP. Omitting `tools` grants broad access. `TodoWrite` and `Skill` remain available. Thus these workers are not tool-free. Inspect the effective tool list in your session. [Tool policy](https://docs.factory.ai/harness/subagents#configuration)
 
 The role prompts restrict additional context and skill loading to preserve the prescribed input boundaries. They do not prohibit routine task tracking. Mandatory tools do not require their use, and these prompt boundaries are not enforced isolation. The coordinator gathers evidence, loads references, and writes artifacts. Keep identity mappings and previous reviews out of shared instructions and skill content. Confirm actual reviewer inputs before claiming blind review.
 
@@ -19,5 +19,3 @@ Droid discovers the existing shared `~/.agents/skills/llm-council/`. Alternative
 Native Markdown/YAML role files belong directly in `.factory/droids/` or `~/.factory/droids/`; `/droids` shows resolved definitions. [Discovery](https://docs.factory.ai/harness/subagents#where-they-live)
 
 Run on the requested host. CLI filesystem operations occur where Droid runs, while model requests follow configured inference routing. Remote Droid Computers need discovery verified on the executing machine; this package does not transfer personal files. Do not switch hosts or provision remote execution merely to finish. [Security](https://docs.factory.ai/enterprise/security), [Droid Computers](https://docs.factory.ai/droid-computers/overview)
-
-Checked September 7, 2026 with native search/retrieval. These are documented capabilities and adapter choices, not live-tested behavior. No Droid process, discovery check, or council was run.

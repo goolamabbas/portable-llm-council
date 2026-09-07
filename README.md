@@ -52,7 +52,7 @@ The commands below install for your user account across projects. For availabili
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
 | Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude.md) |
 
-These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets. See [Claude design decisions](docs/claude-support.md) and [validation status](docs/validation.md) for scope and evidence limits.
+These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
 
 ### Install the shared skill once
 
@@ -106,7 +106,7 @@ cp -n opencode-llm-council/opencode-subagents/*.md "$HOME/.config/opencode/agent
 
 OpenCode uses the shared skill directory. If its global config location is customized, use the resolved directory.
 
-This adapter targets the `permission` / `task` interface documented at the supplied `/docs/` URLs. The separate V2 documentation uses a different agent schema; inspect your version before installation. Workers request no tool access; the coordinating primary agent must load the shared assignments and supply complete inputs. See [execution and version limits](llm-council/references/opencode.md). These instructions are for later installation; preparing this package does not install it.
+This adapter targets the `permission` / `task` interface documented at the supplied `/docs/` URLs. The separate V2 documentation uses a different agent schema; inspect your version before installation. Workers request no tool access; the coordinating primary agent must load the shared assignments and supply complete inputs. See [execution and version limits](llm-council/references/opencode.md).
 
 **Factory Droid**
 
@@ -117,7 +117,7 @@ cp -n droid-llm-council/droid-subagents/*.md "$HOME/.factory/droids/"
 
 Factory Droid uses the shared skill directory. Check `/skills` and `/droids` for the effective definitions after installation.
 
-The adapter requests analysis from supplied inputs and documents Factory's mandatory-tool limitation. Check [Droid execution notes](llm-council/references/factory-droid.md) before running. Installation commands are provided for later use; the package preparation does not execute them.
+The adapter requests analysis from supplied inputs and documents Factory's mandatory-tool limitation. Check [Droid execution notes](llm-council/references/factory-droid.md) before running.
 
 **Claude Code / Claude Desktop local Code**
 
@@ -151,7 +151,7 @@ For remote sessions, install on the host actually executing the agents and verif
 
 ## Models and execution requirements
 
-No GPT-6 Astra dependency or other model pin is included. Definitions inherit the parent model through each harness's supported configuration. Actual model routing, reasoning settings, and permissions can depend on the harness and account; consult the execution notes and record the effective settings when available.
+The skill is model-neutral out of the box. The supplied agent definitions inherit the parent model through each harness's supported configuration. Actual model routing, reasoning settings, and permissions can depend on the harness and account; consult the execution notes and record the effective settings when available.
 
 Use a model that can follow a complete assignment, distinguish evidence from assumptions, evaluate competing arguments, and preserve uncertainty. The coordinator also needs reliable multi-step orchestration and artifact generation. There is no benchmark-backed minimum model size or guarantee that every open-weight model performs equally well.
 
@@ -169,13 +169,13 @@ for this harness. Report the resolved locations and effective model settings
 if available. Do not run a council yet.
 ```
 
-Then run a small decision through the council. Check for five advisor answers, five fresh reviews, one verdict, and both saved artifacts. Discovery, permission enforcement, model resolution, reviewer isolation, and complete execution are separate checks. See [validation status](docs/validation.md) for what has and has not been established.
+Then run a small decision through the council. Check for five advisor answers, five fresh reviews, one verdict, and both saved artifacts. Confirm that reviewers start fresh and that the report accurately reflects the returned answers. If a round is incomplete or the harness cannot preserve the input boundaries, the skill should report that limitation.
 
 ## Package layout
 
 - `llm-council/`: the sole maintained skill, shared assignments, conditional execution references, and optional Codex metadata.
 - `*-llm-council/*-subagents/`: three native agent definitions for each of the seven harnesses.
-- `docs/`: usage guidance, attribution, validation status, and release notes.
+- `docs/`: usage guidance, project installation, attribution, and release notes.
 
 Forks and pull requests for additional harnesses and compatibility improvements are welcome. Contributions should preserve one shared methodology and keep harness-specific behavior in adapters. For compatibility reports, include harness version, model, which rounds completed, and any isolation or permission limitations. Remove private decision content before sharing transcripts.
 

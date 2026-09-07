@@ -8,4 +8,4 @@ Use native subagent tools and inspect their live schema. Do not create separate 
 - **Role selection:** Use `council_advisor`, `council_reviewer`, or `council_chair` only when registered and selectable. Otherwise send the full assignment directly to a generic subagent. Files on disk do not establish registration.
 - **Settings:** Inherit model and reasoning settings unless the user requests otherwise. Do not edit global configuration to make a run possible. No subagent tools means this workflow is unavailable; there is no implicit single-agent simulation mode.
 
-These are compatibility notes, not a universal tool-call recipe. Adapt dispatch to the current Codex surface. Ordinary ChatGPT and other harnesses are not tested targets of this version.
+These are compatibility notes, not a universal tool-call recipe. Adapt dispatch to the current Codex surface. Ordinary ChatGPT is outside this adapter's scope.

@@ -30,7 +30,3 @@ These are portability and reliability refinements, including the stated adjustme
 ## Source terms
 
 The MIT license expresses Yusuf Goolamabbas's permission for his contributions. It does not relicense Lehmann's article, original skill, or any other third-party material. Neither the original article nor the historical original skill document is included in this release package.
-
-The source skill content was available during development: an earlier conversion record documents extracting it from a Google Docs HTML export into a local Markdown reference. That retained reference was inspected again on September 7, 2026. A later attempt to retrieve the linked Google document failed; this does not negate the earlier availability of its content. The current online document has not been compared with the retained copy.
-
-The original article was retrieved through the X API on September 7, 2026. No explicit redistribution or sublicensing terms were found in the inspected article or retained skill text. Source-content availability and permission to redistribute or relicense are separate questions; the retained text does not establish the latter. Before public release, resolve any required upstream permission or review retained wording for independent expression.

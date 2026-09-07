@@ -31,11 +31,9 @@ Start the harness in the target project and verify the resolved skill and all th
 
 Commit these target-project files if teammates should receive them; each teammate still needs the appropriate harness, model access, and permissions. On remote hosts, containers, or separate worktrees, ensure the files exist and are discovered where execution actually happens. Merely placing them in a local project does not deploy them remotely.
 
-The existing [harness execution notes](../README.md#supported-installations) still apply, including OpenCode's version boundary and Factory's mandatory tools. These locations are documentation-checked, not a new runtime validation of project installs.
+The existing [harness execution notes](../README.md#supported-installations) still apply, including OpenCode's version boundary and Factory's mandatory tools.
 
 ## Official references
-
-Checked September 7, 2026 using native retrieval; no provider fallback was needed.
 
 - Codex: [skills](https://learn.chatgpt.com/docs/build-skills), [subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 - Cursor: [skills](https://cursor.com/docs/skills), [subagents](https://cursor.com/docs/subagents).

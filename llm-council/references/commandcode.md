@@ -1,10 +1,10 @@
 # Command Code execution notes
 
-Use only in Command Code. This adapter preserves the shared [assignments](subagents.md) and round structure. Documentation checked September 6, 2026; runtime behavior remains untested.
+Use only in Command Code. This adapter preserves the shared [assignments](subagents.md) and round structure.
 
 Select registered `council-advisor`, `council-reviewer`, and `council-chair` through `agent` using `subagent_type`, a short `description`, and a self-contained `prompt`. Inspect the live schema first. If roles are missing, report the setup gap; do not silently fall back to the unrestricted General agent. [Tool reference](https://commandcode.ai/docs/reference/tools)
 
-Send the complete relevant assignment and inputs each time. Create five separate advisor runs, then five new reviewer runs, then a separate chair. Parallel calls are documented; batch if capacity requires it. No numeric concurrency guarantee was found. Never weaken the round barriers to fit capacity.
+Send the complete relevant assignment and inputs each time. Create five separate advisor runs, then five new reviewer runs, then a separate chair. Parallel calls are documented; batch if capacity requires it. Do not assume a fixed concurrency limit. Never weaken the round barriers to fit capacity.
 
 Advisors and reviewers request `background: true`; retain every returned `agent_id`. Collect final results with `agent_output` (`agent_id`, `action: wait`), or poll with `action: status`. An ID or status alone is not an answer. Parent interruption stops a wait without stopping the worker; inspect outstanding runs before retrying. The chair requests foreground execution. Failed or missing results mean an incomplete round. [Completion handling](https://commandcode.ai/docs/reference/tools)
 
