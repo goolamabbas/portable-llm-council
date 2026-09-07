@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Council"
+  short_description: "Five advisors, peer review, and a clear verdict"
+  default_prompt: "Use $llm-council to pressure-test this decision with five advisors and peer review."
