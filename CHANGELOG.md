@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 — 2026-09-12
+
+- Narrow council triggers and clarify when missing context requires a question.
+- Recover outstanding results before reporting an incomplete round; preserve both artifacts with an explicit incomplete status when recovery is impossible.
+- Reuse current-session capability checks while retaining reviewer-input checks and honest isolation reporting.
+- Clarify adapter-specific fallback boundaries and ordinary host approvals without policy bypasses.
+- Preserve the five-advisor, five-reviewer, separate-chair method, both output formats, and all native agent definitions.
+
 ## 0.2.1 — 2026-09-07
 
 - Add a copyable prompt for installing the skill and relevant agents through your AI assistant.
