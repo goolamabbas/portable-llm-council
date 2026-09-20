@@ -7,3 +7,6 @@ __pycache__/
 /installation-backups/
 /council-report-*.html
 /council-transcript-*.md
+
+# Generated GitHub Pages output
+_site/

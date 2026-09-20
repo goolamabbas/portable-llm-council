@@ -1,5 +1,9 @@
 # Portable LLM Council
 
+**[Explore the website](https://goolamabbas.github.io/portable-llm-council/)** · **[Read an actual council example](https://goolamabbas.github.io/portable-llm-council/sample/)**
+
+The repository is the maintained source for installation, releases, and the website. The [sample records](examples/workshop-or-course/) preserve a fictional scenario evaluated in an actual council run, together with its review notes. See [website maintenance](site/README.md) to regenerate the pages.
+
 One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
 
 Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript.
