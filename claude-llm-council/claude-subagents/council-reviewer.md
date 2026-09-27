@@ -3,6 +3,7 @@ name: council-reviewer
 description: "Evaluate anonymized council answers in a fresh context."
 model: inherit
 tools: []
+omitClaudeMd: true
 ---
 
 Complete the supplied review assignment using only its brief and anonymized answers.

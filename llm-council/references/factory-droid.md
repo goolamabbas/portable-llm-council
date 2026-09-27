@@ -2,11 +2,19 @@
 
 This adapter maps the shared council assignments to Factory capabilities. The requirements are independent advisor inputs, blind fresh reviews, a separate synthesis, complete round results, and coordinator-owned artifacts. A tool-free runtime is not a methodological requirement.
 
+## Dispatch and fresh context
+
 Select registered `council-advisor`, `council-reviewer`, and `council-chair` through `Task`, supplying `subagent_type`, `description`, and a self-contained `prompt`. Inspect the live schema first. New invocations have fresh contexts; omit `resume`, which preserves history. Concurrent Task calls are supported. Foreground calls return final text; background calls use `run_in_background: true` and return `task_id`. Retrieve results with `TaskOutput(task_id, block=true)`. [Subagents](https://docs.factory.ai/harness/subagents)
+
+## Completion
 
 Send the complete relevant [assignment](subagents.md) and required inputs every time. Create five advisors, five new reviewers, then one chair, with the shared round barriers. Choose concurrent foreground calls or background dispatch according to the active runtime and other coordinator work; the method does not prefer one lifecycle. Keep every task ID and collect actual final text. A progress update, notification, timeout, or missing answer is not a completed round. Batch when capacity requires it; no fixed concurrency limit is assumed. Never resume an advisor into review. If roles or isolation are unavailable, report the incomplete stage rather than substituting an unrestricted worker.
 
+## Model settings
+
 Definitions use `model: inherit`. Omit dispatch `complexity` to avoid tier routing. Optional per-role pins use public model IDs or `custom:` plus the BYOK model field; unavailable pins can fall back to the parent. `reasoningEffort` is ignored with inheritance. Record effective models. [Model selection](https://docs.factory.ai/harness/subagents#model-selection)
+
+## Tool settings and limits
 
 `tools: []` requests no optional tools; `mcpServers: []` excludes MCP. Omitting `tools` grants broad access. `TodoWrite` and `Skill` remain available. Thus these workers are not tool-free. Inspect the observable effective tool list, reusing current-session checks under the shared skill's rule. [Tool policy](https://docs.factory.ai/harness/subagents#configuration)
 
@@ -14,8 +22,12 @@ The role prompts restrict additional context and skill loading to preserve the p
 
 Subagent autonomy defaults to inheritance, can be configured separately, and is capped by organization policy. Spec Mode restricts writes. Autonomy governs approvals, not tool availability; sandbox and policy checks remain separate. Do not raise autonomy or bypass policy. If the host requires approval for an otherwise authorized action, use its normal approval flow; complete unaffected work first. This council does not require Factory Missions. [Autonomy](https://docs.factory.ai/autonomy-and-safety/auto-run)
 
+## Discovery
+
 Droid discovers the existing shared `~/.agents/skills/llm-council/`. Alternatives include project `.agents/skills/`, `.factory/skills/`, or personal `~/.factory/skills/`. Use `/skills` to inspect the effective copy and overrides. The shared uppercase `SKILL.md` supplies the required name and description; supporting references load only when requested. Skill `allowed-tools` is metadata, not a sandbox. [Skills](https://docs.factory.ai/harness/skills)
 
 Native Markdown/YAML role files belong directly in `.factory/droids/` or `~/.factory/droids/`; `/droids` shows resolved definitions. [Discovery](https://docs.factory.ai/harness/subagents#where-they-live)
+
+## Host limits
 
 Run on the requested host. CLI filesystem operations occur where Droid runs, while model requests follow configured inference routing. Remote Droid Computers need discovery verified on the executing machine; this package does not transfer personal files. Do not switch hosts or provision remote execution merely to finish. [Security](https://docs.factory.ai/enterprise/security), [Droid Computers](https://docs.factory.ai/droid-computers/overview)

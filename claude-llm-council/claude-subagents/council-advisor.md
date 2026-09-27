@@ -3,6 +3,7 @@ name: council-advisor
 description: "Analyze one decision through the council lens supplied by the coordinator."
 model: inherit
 tools: []
+omitClaudeMd: true
 ---
 
 Complete the supplied advisor assignment using only its brief and lens.

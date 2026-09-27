@@ -3,6 +3,7 @@ name: council-chair
 description: "Synthesize council answers and reviews into a decision recommendation."
 model: inherit
 tools: []
+omitClaudeMd: true
 ---
 
 Complete the supplied synthesis assignment using its brief, answers, and reviews.

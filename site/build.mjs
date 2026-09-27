@@ -1,4 +1,4 @@
-import { readFileSync, mkdirSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, copyFileSync, mkdirSync, writeFileSync, readdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -60,7 +60,9 @@ for (const path of ['index.html', 'sample/index.html', 'get-started/index.html']
   if (/\{\{[A-Z_0-9]+\}\}/.test(html)) throw new Error('Unresolved template');
   write(path, html);
 }
-for (const filename of readdirSync(resolve(root, 'site/assets'))) write('assets/' + filename, read('site/assets/' + filename));
+mkdirSync(resolve(output, 'assets'), { recursive: true });
+for (const filename of readdirSync(resolve(root, 'site/assets'))) copyFileSync(resolve(root, 'site/assets', filename), resolve(output, 'assets', filename));
+copyFileSync(resolve(root, example, 'council-report-20260920T213624+0800.html'), resolve(output, 'sample/original-report.html'));
 const briefMarker = '## Complete scenario and decision brief';
 const sourceMarker = '### Sources and evidence boundary';
 const briefStart = transcript.indexOf(briefMarker);

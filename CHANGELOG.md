@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.3 — 2026-09-27
+
+- Add complete dispatch templates, exact packet records, minimal anonymization, and balanced reviewer presentation order.
+- Reinforce supplied-input boundaries across all 21 role definitions; request Claude instruction omission and Codex read-only execution, with runtime limits explicit.
+- Make adapter notes easier to scan and clarify shared-filesystem exposure.
+- Clarify the website introduction, installation journey, navigation, example provenance, and sharing metadata; link the preserved original report unchanged.
+
 ## 0.2.2 — 2026-09-12
 
 - Narrow council triggers and clarify when missing context requires a question.

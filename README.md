@@ -6,7 +6,7 @@ The repository is the maintained source for installation, releases, and the webs
 
 One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
 
-Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript.
+Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript, including dispatch packets and reviewer presentation orders.
 
 Adapted from [Ole Lehmann's Claude-focused council workflow](https://x.com/itsolelehmann/status/2038661433626333649), which draws on [Andrej Karpathy's LLM Council](https://github.com/karpathy/llm-council). This version preserves Lehmann's lens-based structure while separating the shared methodology from harness-specific execution. See [attribution and changes](docs/attribution.md).
 
@@ -32,7 +32,7 @@ Each advisor receives the same decision brief and examines it through one thinki
 | **Outsider** | Jargon, unstated assumptions, and gaps that a fresh reader would notice | What would someone unfamiliar with this field find confusing or unconvincing? |
 | **Executor** | Feasibility, dependencies, and a practical starting point | Can this be done, and what is the first step? |
 
-After all five answers arrive, the coordinator removes explicit role labels and shuffles them into Responses A–E. **Five fresh reviewers** each receive the brief and all five anonymous answers, without the identity mapping or other reviews. They ask the same three questions:
+After all five answers arrive, the coordinator removes explicit role labels and shuffles them into Responses A–E. **Five fresh reviewers** each receive the brief and all five anonymous answers, without the identity mapping or other reviews. The answer text and letter identities stay fixed while presentation order rotates between reviewers. The coordinator records the exact inputs sent to each worker. They ask the same three questions:
 
 1. Which response is strongest, and why?
 2. Which response has the biggest blind spot, and what is missing?
@@ -65,7 +65,7 @@ In a supported harness, you can ask the assistant to handle installation:
 ```text
 Read the installation instructions at
 https://github.com/goolamabbas/portable-llm-council
-and install the shared skill and the agent definitions for this harness
+and install the shared skill and the agent definitions for this coding agent
 in my personal installation locations. Back up existing copies before
 replacing anything, then verify discovery. Do not run a council yet.
 ```
@@ -161,7 +161,7 @@ cp -n claude-llm-council/claude-subagents/*.md "$HOME/.claude/agents/"
 
 Refresh an older shared skill before linking it. Claude supports skill-directory symlinks; copy the whole folder when symlinks are unsuitable. There is no separate Claude SKILL.md. [Claude skill discovery](https://code.claude.com/docs/en/skills)
 
-The supplied roles request no tools and return analysis from the coordinator's inputs. Read the [Claude execution notes](llm-council/references/claude.md) for fresh-worker dispatch and ambient-instruction limits. If another installed harness also discovers `.claude` directories, check which same-named role it resolves; do not assume this installation is invisible to it.
+The supplied roles request no tools and omit ordinary project instructions with `omitClaudeMd: true` (Claude Code v2.1.271+); managed policy still applies. They return analysis from the coordinator's inputs. Read the [Claude execution notes](llm-council/references/claude.md) for fresh-worker dispatch and ambient-instruction limits. If another installed harness also discovers `.claude` directories, check which same-named role it resolves; do not assume this installation is invisible to it.
 
 Restart the harness or start a new session, then verify that it discovers the intended skill and all three native roles. Files on disk alone do not establish registration. The optional `llm-council/agents/openai.yaml` provides Codex presentation metadata; it is not a worker definition.
 
@@ -183,7 +183,7 @@ Start with this request:
 
 ```text
 Check whether you discover the llm-council skill and the three council roles
-for this harness. Report the resolved locations and effective model settings
+for this coding agent. Report the resolved locations and effective model settings
 if available. Do not run a council yet.
 ```
 
