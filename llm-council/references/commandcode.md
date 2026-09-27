@@ -1,6 +1,6 @@
 # Command Code execution notes
 
-Use only in Command Code. This adapter preserves the shared [assignments](subagents.md) and round structure.
+Use only in Command Code. This adapter preserves the shared [assignments](subagents.md#dispatch-templates-and-records) and round structure.
 
 ## Discovery and dispatch
 

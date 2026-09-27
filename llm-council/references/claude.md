@@ -10,7 +10,7 @@ Keep the shared skill in the coordinating conversation. Select `council-advisor`
 
 ## Fresh context
 
-Create separate non-fork instances for all eleven workers. Do not use `fork`, `context: fork`, or resume an advisor as a reviewer. Supplied definitions set `omitClaudeMd: true`, supported from v2.1.271. Current startup documentation includes project `AGENTS.md` in the instruction hierarchy this setting omits. Managed policy and environment context can still load; inspect observable inputs and disclose uncertainty. Older versions may ignore the setting.
+Create separate non-fork instances for all eleven workers. Do not use `fork`, `context: fork`, or resume an advisor as a reviewer. Supplied definitions set `omitClaudeMd: true`, supported from v2.1.271. Current startup documentation includes project `AGENTS.md` in the instruction hierarchy this setting omits. Managed policy and environment context, including a git status snapshot that may name earlier council files, can still load; inspect observable inputs and disclose uncertainty. Older versions may ignore the setting.
 
 ## Completion
 

@@ -2,7 +2,7 @@
 
 ## Discovery and dispatch
 
-Select `council-advisor`, `council-reviewer`, and `council-chair` when available. Send the full relevant [assignment](subagents.md) in each invocation; the role files alone do not contain the five lenses or verdict structure. If custom roles are unavailable, use a suitable general subagent with the full assignment and the same boundaries. Do not substitute a specialized code-search worker for decision analysis.
+Select `council-advisor`, `council-reviewer`, and `council-chair` when available. Send the full relevant [assignment](subagents.md#dispatch-templates-and-records) in each invocation; the role files alone do not contain the five lenses or verdict structure. If custom roles are unavailable, use a suitable general subagent with the full assignment and the same boundaries. Do not substitute a specialized code-search worker for decision analysis.
 
 ## Fresh context
 

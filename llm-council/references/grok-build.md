@@ -2,7 +2,7 @@
 
 ## Discovery
 
-Select `council-advisor`, `council-reviewer`, and `council-chair` only when registered. Send each complete [assignment](subagents.md); these short role files do not duplicate the methodology. [Discovery](https://docs.x.ai/build/features/skills-plugins-marketplaces)
+Select `council-advisor`, `council-reviewer`, and `council-chair` only when registered. Send each complete [assignment](subagents.md#dispatch-templates-and-records); these short role files do not duplicate the methodology. [Discovery](https://docs.x.ai/build/features/skills-plugins-marketplaces)
 
 ## Dispatch, fresh context, and completion
 

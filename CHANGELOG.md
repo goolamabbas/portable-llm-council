@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.4 — 2026-09-27
+
+- Allow deduplicated dispatch records with explicit capture status while retaining complete worker inputs.
+- Preserve reviewer-slot order across retries and allow unexposed worker IDs.
+- Clarify historical report links and future phone-width output requirements; improve mobile navigation targets.
+- Remove redundant Droid wording, link adapters to dispatch templates, and clarify Claude git-status context.
+
 ## 0.2.3 — 2026-09-27
 
 - Add complete dispatch templates, exact packet records, minimal anonymization, and balanced reviewer presentation order.

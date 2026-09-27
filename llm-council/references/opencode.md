@@ -8,7 +8,7 @@ Select registered `council-advisor`, `council-reviewer`, and `council-chair`. Fi
 
 ## Dispatch and fresh context
 
-Inspect the live `task` schema. Supply `subagent_type`, a short `description`, and the complete relevant [assignment](subagents.md) plus its required inputs. Omit `task_id` for every new worker; it resumes an existing session. The inspected implementation creates a child session and sends the supplied prompt rather than copying parent messages. This is source inspection, not proof of all runtime isolation: project instructions, plugins, or prompt expansion may add context. Keep mappings and prior reviews out of shared instructions and worker inputs. [Task implementation](https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/tool/task.ts)
+Inspect the live `task` schema. Supply `subagent_type`, a short `description`, and the complete relevant [assignment](subagents.md#dispatch-templates-and-records) plus its required inputs. Omit `task_id` for every new worker; it resumes an existing session. The inspected implementation creates a child session and sends the supplied prompt rather than copying parent messages. This is source inspection, not proof of all runtime isolation: project instructions, plugins, or prompt expansion may add context. Keep mappings and prior reviews out of shared instructions and worker inputs. [Task implementation](https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/tool/task.ts)
 
 ## Completion
 

@@ -6,7 +6,7 @@ The repository is the maintained source for installation, releases, and the webs
 
 One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
 
-Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript, including dispatch packets and reviewer presentation orders.
+Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript, including dispatch records, their capture status, and reviewer presentation orders.
 
 Adapted from [Ole Lehmann's Claude-focused council workflow](https://x.com/itsolelehmann/status/2038661433626333649), which draws on [Andrej Karpathy's LLM Council](https://github.com/karpathy/llm-council). This version preserves Lehmann's lens-based structure while separating the shared methodology from harness-specific execution. See [attribution and changes](docs/attribution.md).
 
@@ -32,7 +32,7 @@ Each advisor receives the same decision brief and examines it through one thinki
 | **Outsider** | Jargon, unstated assumptions, and gaps that a fresh reader would notice | What would someone unfamiliar with this field find confusing or unconvincing? |
 | **Executor** | Feasibility, dependencies, and a practical starting point | Can this be done, and what is the first step? |
 
-After all five answers arrive, the coordinator removes explicit role labels and shuffles them into Responses A–E. **Five fresh reviewers** each receive the brief and all five anonymous answers, without the identity mapping or other reviews. The answer text and letter identities stay fixed while presentation order rotates between reviewers. The coordinator records the exact inputs sent to each worker. They ask the same three questions:
+After all five answers arrive, the coordinator removes explicit role labels and shuffles them into Responses A–E. **Five fresh reviewers** each receive the brief and all five anonymous answers, without the identity mapping or other reviews. The answer text and letter identities stay fixed while presentation order rotates between reviewers. The coordinator records worker inputs and distinguishes verified captures from coordinator copies or reconstructions; repeated record components may be stored once. They ask the same three questions:
 
 1. Which response is strongest, and why?
 2. Which response has the biggest blind spot, and what is missing?

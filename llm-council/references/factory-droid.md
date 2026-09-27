@@ -8,7 +8,7 @@ Select registered `council-advisor`, `council-reviewer`, and `council-chair` thr
 
 ## Completion
 
-Send the complete relevant [assignment](subagents.md) and required inputs every time. Create five advisors, five new reviewers, then one chair, with the shared round barriers. Choose concurrent foreground calls or background dispatch according to the active runtime and other coordinator work; the method does not prefer one lifecycle. Keep every task ID and collect actual final text. A progress update, notification, timeout, or missing answer is not a completed round. Batch when capacity requires it; no fixed concurrency limit is assumed. Never resume an advisor into review. If roles or isolation are unavailable, report the incomplete stage rather than substituting an unrestricted worker.
+Send the complete relevant [assignment](subagents.md#dispatch-templates-and-records) and required inputs every time. Create five advisors, five new reviewers, then one chair, with the shared round barriers. Choose concurrent foreground calls or background dispatch according to the active runtime and other coordinator work; the method does not prefer one lifecycle. Keep every task ID and collect actual final text. A progress update, notification, timeout, or missing answer is not a completed round. Batch when capacity requires it; no fixed concurrency limit is assumed. Never resume an advisor into review. If roles or isolation are unavailable, report the incomplete stage rather than substituting an unrestricted worker.
 
 ## Model settings
 

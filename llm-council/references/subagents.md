@@ -89,7 +89,7 @@ ASSIGNMENT:
 </response>
 ```
 
-This shows reviewer 1. For reviewers 2–5, move the complete labeled blocks into BCDEA, CDEAB, DEABC, and EABCD order respectively. Do not relabel or rewrite answers. All five reviewers receive every answer exactly once. Do not include the identity mapping, advisor histories, other reviews, or coordinator preferences.
+This shows reviewer 1. For reviewers 2–5, move the complete labeled blocks into BCDEA, CDEAB, DEABC, and EABCD order respectively. A replacement reviewer receives the same order as the slot it replaces; record both attempts and identify the completed result used for that slot. Do not count a retry as an additional reviewer. Do not relabel or rewrite answers. All five reviewers receive every answer exactly once. Do not include the identity mapping, advisor histories, other reviews, or coordinator preferences.
 
 ### Chair packet
 
@@ -118,4 +118,16 @@ ASSIGNMENT:
 </execution_limits>
 ```
 
-Before each dispatch, check that no placeholder remains and all required sections are complete. Retain the actual sent packet and returned text with the worker ID and round. Log explicit identity-label removals separately while preserving originals. Store records outside worker-readable locations when the host supports it; otherwise disclose the limitation. Exact sent packets establish what the coordinator supplied, not everything the host added to worker context. If raw dispatch capture is unavailable, identify reconstructed records honestly.
+### Recording dispatches
+
+Before each dispatch, check that no placeholder remains and all required sections are complete. Record the round, logical worker slot, attempt, worker ID (or “not exposed”), presentation order where relevant, and complete returned text. Log explicit identity-label removals while preserving original returns.
+
+Retain the dispatched text as sent where observable. Label records by their evidence:
+
+- **Verified capture:** mechanically captured from the actual dispatch or mechanically compared against it. A saved draft alone does not establish what was sent. Use “exact” only for this status, and identify the capture or comparison method.
+- **Coordinator copy:** retained by the coordinator without mechanical verification against dispatch.
+- **Reconstruction:** assembled afterward from available components or recollection; identify any missing or uncertain text.
+
+The transcript may store each assignment, brief, answer, and review once, with stable component IDs. For each attempt, retain the component versions used, literal wrapper text, assembly order, and any differences. Reuse a component only when its text is identical; preserve revisions separately. This avoids repeating shared text without replacing it with summaries. Reconstruction from components still needs a capture-status label; it is not proof of dispatch fidelity by itself.
+
+Deduplicate only the saved record. Each worker must receive the complete required text, not component IDs, file paths, or instructions to retrieve it. Even verified dispatch text does not establish what the host added to context. Store records outside worker-readable locations when supported; otherwise disclose the limitation.

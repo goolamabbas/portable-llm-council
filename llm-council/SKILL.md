@@ -21,7 +21,7 @@ Read [subagent assignments and dispatch templates](references/subagents.md) for 
 
 ## Preserve what makes this useful
 
-- Assemble each dispatch with the role template and check its required inputs before sending. Retain the exact dispatched assignment and inputs, worker identifier, and complete returned text for the transcript; never substitute coordinator summaries for worker answers. Clearly label any record reconstructed after dispatch.
+- Assemble each dispatch with the role template and check its required inputs before sending. Retain a dispatch record and complete returned text for the transcript; never substitute coordinator summaries for worker answers. Use the recording rules in the shared assignments to distinguish verified capture, coordinator copies, and reconstructions. Shared record components may be stored once; workers still receive complete packets.
 - Keep mappings, prior reviews, and other council records out of worker-accessible context where supported. Read-only access does not prevent reading earlier files. Keep working records outside worker access when possible and write public artifacts after the chair finishes; delaying writes alone does not establish isolation. Disclose remaining shared-file or ambient-instruction access.
 - Separate contexts matter more than simultaneous starts. Reviewers must not inherit an advisor's identity or the coordinator's preferred answer.
 - Ask for direct, lens-specific analysis without invented evidence or forced disagreement. Shared-model agreement is not factual verification; anonymous labels cannot conceal every stylistic cue.
@@ -32,8 +32,8 @@ Read [subagent assignments and dispatch templates](references/subagents.md) for 
 
 Save `council-report-{timestamp}.html` and `council-transcript-{timestamp}.md` in the requested directory, defaulting to the current project. Use matching UTC timestamps such as `20260927T120000Z` and avoid overwriting past sessions. If recovery is impossible, save both artifacts with a prominent incomplete status, the returned material, and the blocker; do not invent a chair verdict or present the council as complete.
 
-The HTML report should make the question and verdict easy to scan, show actual agreement/disagreement, and offer collapsible advisor responses and review highlights. Keep it self-contained, readable, and escape inserted text. Preview it when supported.
+The HTML report should make the question and verdict easy to scan, show actual agreement/disagreement, and offer collapsible advisor responses and review highlights. Keep it self-contained, readable, and usable at phone width: wrap long text and wrap or horizontally scroll wide tables. Escape inserted text. Preview it at desktop and phone widths when supported.
 
-The Markdown transcript records the original question, brief and sources, all returned answers and reviews, the revealed mapping, and full verdict. Include exact dispatch packets and reviewer presentation orders, plus actual execution details and material gaps: completed rounds, batching, isolation limits, and models if known. Record returned analyses, not hidden internal reasoning.
+The Markdown transcript records the original question, brief and sources, all returned answers and reviews, the revealed mapping, and full verdict. Include dispatch records with their capture status and reviewer presentation orders, plus actual execution details and material gaps: completed rounds, batching, isolation limits, and models if known. Record returned analyses, not hidden internal reasoning.
 
 Return the recommendation, or the blocker for an incomplete council, and links to both files. Check that the artifacts faithfully contain the returned council output and accurately state completion.
