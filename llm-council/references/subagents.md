@@ -16,7 +16,7 @@ Workers return text to the coordinator, who handles artifacts. They do not deleg
 | Outsider | What would someone unfamiliar with this field find confusing or unconvincing? Expose jargon and unstated assumptions using only the brief. |
 | Executor | What can actually be done, and what is the practical first step? Test feasibility, dependencies, and time to action. |
 
-**Output:** roughly 150–300 words of direct, substantive analysis from the assigned lens. Emphasize that perspective rather than forcing balance. Preserve uncertainty where it matters, and distinguish assumptions from facts. Omit the advisor's name and role label from the response.
+**Output:** aim for 200–400 words of direct, substantive analysis from the assigned lens. Use up to 500 when necessary to explain a consequential calculation, dependency, or uncertainty. Shorter answers are welcome; do not fill the allowance. Emphasize that perspective rather than forcing balance. Preserve uncertainty where it matters, and distinguish assumptions from facts. Omit the advisor's name and role label from the response.
 
 The Outsider is a fresh-reading lens, not a request to conceal decision facts or pretend to have lived experience.
 
@@ -30,7 +30,7 @@ The Outsider is a fresh-reading lens, not a request to conceal decision facts or
 2. Which response has the biggest blind spot, and what is missing?
 3. What did all five responses miss that the council should consider?
 
-Reference answers by letter. Evaluate arguments rather than guessing identities. Do not invent a novel blind spot merely to fill the third answer.
+Reference answers by letter. Evaluate arguments rather than guessing identities. Contributions serve different purposes: exposing an important assumption can be valuable without proposing an action. Do not penalize an answer solely for lacking a recommendation. Check factual criticisms against the supplied brief and answers; distinguish a calculation error from a disputed assumption. Before claiming that all five missed a point, check all five answers. Say “No additional gap identified” when warranted; do not invent a blind spot to fill the third answer.
 
 ## Chair: one separate instance
 
@@ -41,7 +41,7 @@ Reference answers by letter. Evaluate arguments rather than guessing identities.
 - **Where the Council Agrees:** meaningful convergence and its basis.
 - **Where the Council Clashes:** competing reasoning, without smoothing away disagreement.
 - **Blind Spots the Council Caught:** what review added beyond the individual answers.
-- **The Recommendation:** a clear choice or course of action, supported by reasons and material conditions. Favor evidence over vote count. When evidence cannot support a decision, name the decisive check.
+- **The Recommendation:** a clear choice or course of action, supported by reasons and material conditions. Include decisive conditions in the opening verdict, not only in later detail. Keep unresolved feasibility checks conditional; a proposal to investigate is not approval to proceed. Favor evidence over vote count. When evidence cannot support a decision, name the decisive check.
 - **The One Thing to Do First:** one concrete next step.
 
 
@@ -120,7 +120,7 @@ ASSIGNMENT:
 
 ### Recording dispatches
 
-Before each dispatch, check that no placeholder remains and all required sections are complete. Record the round, logical worker slot, attempt, worker ID (or “not exposed”), presentation order where relevant, and complete returned text. Log explicit identity-label removals while preserving original returns.
+Before each dispatch, check that no placeholder remains, wrappers are complete, and every required input is present in full and in the intended order. Assemble from retained components rather than manually retyping long returns; compare the assembled packet with those components mechanically where supported. Record the round, logical worker slot, attempt, worker ID (or “not exposed”), presentation order where relevant, and complete returned text. Log explicit identity-label removals while preserving original returns.
 
 Retain the dispatched text as sent where observable. Label records by their evidence:
 
@@ -131,3 +131,7 @@ Retain the dispatched text as sent where observable. Label records by their evid
 The transcript may store each assignment, brief, answer, and review once, with stable component IDs. For each attempt, retain the component versions used, literal wrapper text, assembly order, and any differences. Reuse a component only when its text is identical; preserve revisions separately. This avoids repeating shared text without replacing it with summaries. Reconstruction from components still needs a capture-status label; it is not proof of dispatch fidelity by itself.
 
 Deduplicate only the saved record. Each worker must receive the complete required text, not component IDs, file paths, or instructions to retrieve it. Even verified dispatch text does not establish what the host added to context. Store records outside worker-readable locations when supported; otherwise disclose the limitation.
+
+### Correcting a material input defect
+
+For any role, preserve the defective attempt and record the missing or incorrect input. Send a corrected complete packet to a fresh replacement for the same logical slot; preserve reviewer letter identities and that slot’s presentation order. Mark the superseded attempt and identify the result used. If downstream workers already consumed a superseded result, replace the affected downstream attempts before claiming a complete corrected run. Allow one corrective replacement per affected slot; if it cannot complete correctly, report the unresolved defect and an incomplete run rather than retrying indefinitely. Do not retry merely for a modest word-count overrun or an unwelcome conclusion.

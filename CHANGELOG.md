@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.6 — 2026-09-29
+
+- Give advisors a 200–400 word target, with up to 500 for consequential detail; retain concise reviews.
+- Review different contributions fairly and check factual criticisms and claims of missing coverage.
+- Carry decisive conditions into the chair’s opening verdict and qualify unresolved feasibility.
+- Strengthen packet assembly checks and bounded recovery for material input defects across all roles.
+- Check decision-critical arithmetic, dates, units, and agreement before delivery while preserving original outputs.
+- Keep native role definitions and historical website examples unchanged.
+
 ## 0.2.5 — 2026-09-28
 
 - Lead with business and technical decisions and use AI-assistant terminology.

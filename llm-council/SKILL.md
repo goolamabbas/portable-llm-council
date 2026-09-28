@@ -26,6 +26,7 @@ Read [subagent assignments and dispatch templates](references/subagents.md) for 
 - Separate contexts matter more than simultaneous starts. Reviewers must not inherit an advisor's identity or the coordinator's preferred answer.
 - Ask for direct, lens-specific analysis without invented evidence or forced disagreement. Shared-model agreement is not factual verification; anonymous labels cannot conceal every stylistic cue.
 - Use available evidence. When a consequential factual claim needs checking, verify it through appropriate available tools or identify it as unresolved. Council discussion alone does not validate it.
+- Correct material input defects using the shared assignments’ replacement rules for any role; preserve superseded attempts and affected downstream dependencies.
 - Recover outstanding results through the supported lifecycle before declaring a round incomplete; report a blocker when recovery is unavailable. If delegation or isolation is unavailable, or a round cannot finish, report the limitation. Do not pass off one-agent roleplay or missing reviews as a completed council.
 
 ## Deliver
@@ -35,5 +36,7 @@ Save `council-report-{timestamp}.html` and `council-transcript-{timestamp}.md` i
 The HTML report should make the question and verdict easy to scan, show actual agreement/disagreement, and offer collapsible advisor responses and review highlights. Keep it self-contained, readable, and usable at phone width: wrap long text and wrap or horizontally scroll wide tables. Escape inserted text. Preview it at desktop and phone widths when supported.
 
 The Markdown transcript records the original question, brief and sources, all returned answers and reviews, the revealed mapping, and full verdict. Include dispatch records with their capture status and reviewer presentation orders, plus actual execution details and material gaps: completed rounds, batching, isolation limits, and models if known. Record returned analyses, not hidden internal reasoning.
+
+Before delivery, check decision-critical arithmetic, dates, units, and claims of agreement against the supplied evidence and returned analyses, using deterministic tools where available. Keep the check proportionate to what could change the decision and respect the run’s research boundaries. Preserve original worker text; put discovered errors and unresolved checks in a separate, clearly labeled qualification beside the recommendation. Do not present a recommendation undermined by those checks as ready to act on.
 
 Return the recommendation, or the blocker for an incomplete council, and links to both files. Check that the artifacts faithfully contain the returned council output and accurately state completion.
