@@ -9,6 +9,6 @@ Use native subagent tools and inspect their live schema. Do not create separate 
 - **Role selection:** Use `council_advisor`, `council_reviewer`, or `council_chair` only when registered and selectable. Otherwise send the full assignment directly to a generic subagent. Files on disk do not establish registration.
 - **Settings:** Inherit model and reasoning settings unless the user requests otherwise. Do not edit global configuration to make a run possible. No subagent tools means this workflow is unavailable; there is no implicit single-agent simulation mode.
 
-These are compatibility notes, not a universal tool-call recipe. Adapt dispatch to the current Codex surface. Ordinary ChatGPT is outside this adapter's scope.
+These are compatibility notes, not a universal tool-call recipe. Adapt dispatch to the current Codex surface. This adapter targets local Codex workflows, including Codex in the ChatGPT desktop app, CLI, and IDE extension. ChatGPT Work also has documented subagent workflows for eligible accounts, but this package’s installation, custom-role discovery, and complete council execution there remain unverified. Do not assume hosted Work loads local `~/.codex/agents/` files. [OpenAI subagent availability](https://learn.chatgpt.com/docs/agent-configuration/subagents?surface=app)
 
 Sources checked 2026-09-27: [custom-agent schema](https://learn.chatgpt.com/docs/agent-configuration/subagents#custom-agent-file-schema). Runtime enforcement of the updated definitions remains unverified.

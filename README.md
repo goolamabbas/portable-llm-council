@@ -4,7 +4,7 @@
 
 The repository is the maintained source for installation, releases, and the website. The [sample records](examples/workshop-or-course/) preserve a fictional scenario evaluated in an actual council run, together with its review notes. See [website maintenance](site/README.md) to regenerate the pages.
 
-One shared decision-making skill with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
+One shared skill for business and technical decisions, with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
 
 Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript, including dispatch records, their capture status, and reviewer presentation orders.
 
@@ -56,7 +56,13 @@ The commands below install for your user account across projects. For availabili
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
 | Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude.md) |
 
-These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, ordinary ChatGPT, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
+These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
+
+### Codex and ChatGPT desktop
+
+The Codex adapter covers local Codex workflows in the ChatGPT desktop app, CLI, and IDE extension. Keep the Codex installation paths above; the app name does not change the native role format.
+
+OpenAI also documents subagent workflows in ChatGPT Work for eligible accounts. This package’s installation, custom-role discovery, and full council workflow in ChatGPT Work remain unverified. Hosted Work should not be assumed to load local `~/.codex/agents/` files. See [OpenAI’s subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents?surface=app).
 
 ### Ask your assistant to install
 
@@ -65,7 +71,7 @@ In a supported harness, you can ask the assistant to handle installation:
 ```text
 Read the installation instructions at
 https://github.com/goolamabbas/portable-llm-council
-and install the shared skill and the agent definitions for this coding agent
+and install the shared skill and the agent definitions for this AI assistant
 in my personal installation locations. Back up existing copies before
 replacing anything, then verify discovery. Do not run a council yet.
 ```
@@ -183,7 +189,7 @@ Start with this request:
 
 ```text
 Check whether you discover the llm-council skill and the three council roles
-for this coding agent. Report the resolved locations and effective model settings
+for this AI assistant. Report the resolved locations and effective model settings
 if available. Do not run a council yet.
 ```
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.5 — 2026-09-28
+
+- Lead with business and technical decisions and use AI-assistant terminology.
+- Clarify Codex desktop/CLI/IDE scope and distinguish unverified ChatGPT Work package compatibility.
+- Update website sharing imagery and Codex adapter documentation; method and native roles unchanged.
+
 ## 0.2.4 — 2026-09-27
 
 - Allow deduplicated dispatch records with explicit capture status while retaining complete worker inputs.
