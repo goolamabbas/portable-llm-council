@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClearFold Council Report</title>
+<style>
+:root{--bg:#f6f5f1;--fg:#1d1d1b;--mut:#5d5b55;--card:#fff;--bd:#dcd9d0;--acc:#1f5f8b;--warn:#8a4b00;--warnbg:#fff4e0;--ok:#1e6b45;--okbg:#e8f4ec;--code:#eee9dd}
+@media (prefers-color-scheme:dark){:root{--bg:#16171a;--fg:#e9e7e1;--mut:#a5a29a;--card:#202226;--bd:#383a40;--acc:#7db9e8;--warn:#f0b866;--warnbg:#3a2c14;--ok:#7fd1a2;--okbg:#17301f;--code:#2c2e33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0} h2{font-size:1.15rem;margin:.1em 0 .5em}
+.sub{color:var(--mut);margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0;overflow-wrap:anywhere}
+.verdict{border-left:6px solid var(--acc)}
+.qual{background:var(--warnbg);border-color:var(--warn);color:var(--fg)}
+.qual h2{color:var(--warn)}
+.rec{border-left:6px solid var(--ok)}
+.status{display:inline-block;background:var(--okbg);color:var(--ok);border-radius:99px;padding:2px 10px;font-size:.85rem;font-weight:600}
+p{margin:.5em 0} ul{margin:.3em 0 .3em 0;padding-left:1.3em} li{margin:.2em 0}
+.cont{margin-left:1.3em}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.9em}
+details{background:var(--card);border:1px solid var(--bd);border-radius:10px;margin:8px 0;overflow-wrap:anywhere}
+summary{cursor:pointer;padding:10px 14px;font-weight:600}
+.body{padding:0 16px 12px;border-top:1px solid var(--bd)}
+.tag{font-weight:400;font-size:.78rem;background:var(--code);border-radius:99px;padding:1px 8px;margin-left:4px;white-space:nowrap}
+.tw{overflow-x:auto} table{border-collapse:collapse;min-width:100%} th,td{border:1px solid var(--bd);padding:5px 9px;text-align:left}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.num{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 12px}
+.num b{display:block;font-size:1.25rem} .num span{color:var(--mut);font-size:.88rem}
+.bad b{color:var(--warn)}
+a{color:var(--acc)}
+</style></head><body><main>
+<h1>A larger customer — or room to grow?</h1>
+<p class="sub">ClearFold Laundry · fictional scenario · council run 20260928T231041Z · <span class="status">Complete: 5 advisors, 5 blind reviewers, chair</span></p>
+
+<section class="card verdict"><h2>Verdict</h2>
+<p><strong>Verdict in brief:</strong> Do not sign Option A as written. Send B in writing to the hotel by September 6, together with a conditional A fallback. Sign B if the hotel accepts it as proposed. Sign a revised A only if the conditions below are agreed in writing before September 8. Otherwise decline and pursue C.</p>
+<p>The decisive conditions:</p>
+<ul>
+<li><strong>Cash under A:</strong> a deposit or faster payment that keeps cash at or above $10,000 in the two-week-delay stress case.</li>
+<li><strong>Weeks 14-26 under A:</strong> an exit or cap, or confirmed capacity for those weeks.</li>
+<li><strong>Capacity inputs:</strong> the overtime arrangement, and for A the partner reservation, confirmed in writing.</li>
+</ul>
+<p>I re-derived the figures from the brief. The base figures below are stipulated inputs plus my arithmetic. The cash figures assume existing-customer timing is unchanged and hotel invoices are paid on the stated schedule or the stressed one.</p>
+</section>
+
+<section class="card qual"><h2>Coordinator qualifications (not part of the chair's text)</h2>
+<ul>
+<li><strong>Checked and confirmed:</strong> A ≈ $10,000 and B ≈ $9,565 13-week profit after setup; A cash low $11,550 (wk 4) on agreed terms, <strong>$9,750 / $8,200 (wk 5 / 6)</strong> under a two-week delay; B stress-case low $17,500.</li>
+<li><strong>Relief size:</strong> $1,800 is the bare minimum for exactly a two-week delay and must be in hand by week 5; a 3-week payment term still fails the stress case (2 weeks or faster passes). About $5,000 covers roughly a four-week delay.</li>
+<li><strong>Errors in worker outputs:</strong> Executor's B minimum ($18,600) should be $17,500; Expansionist's "1,000 lb spare in ordinary weeks" should be 500; Contrarian's "6,500 lb or more" should be "above 6,500"; the chair's "unanimously weakest" for the Outsider is not accurate (4 of 5). None changes the recommendation.</li>
+<li><strong>Not verifiable from the brief:</strong> hotel's response to B; weeks 14–26 workload and partner cover; breakdown risk; cost of a serious service failure; whether the partner may take a non-hotel prospect's pounds if B and C are combined.</li>
+<li>This is a coordinator check by the same model family, not independent review. See <code>audit-note.md</code>.</li>
+</ul></section>
+
+<div class="grid">
+<div class="num"><b>≈ $10,000</b><span>A: 13-week profit after $4,000 setup</span></div>
+<div class="num"><b>≈ $9,565</b><span>B: 13-week profit after $2,500 setup</span></div>
+<div class="num bad"><b>$8,200</b><span>A cash at wk 6 under 2-week delay (floor $10,000)</span></div>
+<div class="num"><b>$17,500</b><span>B lowest cash under the same delay</span></div>
+</div>
+
+<h2 style="margin-top:22px">Chair's synthesis</h2>
+<section class="card agree"><h2>Where the Council Agrees</h2><ul>
+<li><strong>A fails the hard cash floor under the two-week delay.</strong> Cash after setup is $18,000. Weeks 1-3 net about -$1,550 each, and week 4 nets -$1,800, so cash falls to $11,550 at the end of week 4. With no hotel receipt in week 5, cash is about $9,750 in week 5 and about $8,200 in week 6. Week 7 recovers to about $10,400. That is two week-ends below a floor Maya has set as hard. Every substantive answer and reviewer reached this independently, and the arithmetic holds.</li>
+<li><strong>A&#x27;s earnings edge over B is small.</strong></li>
+</ul>
+<div class="tw"><table><thead><tr><th></th><th>Hotel margin, ordinary week</th><th>Hotel margin, peak week</th><th>13-week profit after setup</th></tr></thead><tbody><tr><td>A</td><td>$1,200</td><td>$800</td><td>about $10,000</td></tr><tr><td>B</td><td>$945</td><td>$890</td><td>about $9,565</td></tr></tbody></table></div>
+<p>  B earns about $435 less than A. B&#x27;s stress-case cash low is about $17,500 (week 6). Executor&#x27;s figure of $18,600 is a small error that doesn&#x27;t change the conclusion.</p>
+<ul>
+<li><strong>A has no capacity slack.</strong> Ordinary weeks need 8,500 lb, so A uses overtime every week. Peak weeks need 10,000 lb against 9,000 lb in-house, so A uses the full 1,000 lb of partner overflow. There is no buffer for a breakdown, and the brief says there is no spare line.</li>
+<li><strong>Weeks 14-26 under A are an unforecast, exit-less commitment.</strong> A 2,500 lb paid minimum continues, and the partner is not reserved for that period.</li>
+<li><strong>C is safe but uncommitted.</strong> Its upside is at most about $720/week, and neither prospect has committed or given a start date, so it can&#x27;t count as guaranteed revenue.</li>
+<li><strong>B is not an available offer.</strong> The hotel may reject it, so A or C must stay ready as fallbacks.</li>
+</ul></section>
+<section class="card clash"><h2>Where the Council Clashes</h2><ul>
+<li><strong>How much relief A needs.</strong></li>
+<ul>
+<li>First Principles: about $1,800, which is the minimum to keep the week-6 low at $10,000.</li>
+<li>Executor: a deposit of at least $5,000, or payment within 1-2 weeks.</li>
+<li>The arithmetic supports $1,800 only as the bare minimum for exactly a two-week delay. It leaves zero cushion and fails if the delay is longer or any cost overruns. Executor&#x27;s larger figure is a judgement, not a computed requirement. I favor asking for a deposit well above $1,800, with the relief in hand before the end of week 5 (before the first missing receipt).</li>
+</ul>
+<li><strong>How to treat the 26-week term.</strong></li>
+<ul>
+<li>Contrarian and Executor demand an exit or cap, or confirmed partner cover.</li>
+<li>First Principles accepts either partner cover or Maya confirming she can serve those weeks.</li>
+<li>Expansionist sees A&#x27;s guaranteed minimum as a potential advantage if payment terms improve.</li>
+<li>The evidence favors caution. Existing volume above 6,500 lb plus the 2,500 lb minimum exceeds the 9,000 lb ceiling. Post-week-13 volumes are unknown, and the partner is unreserved. An overshoot would force Maya to miss either existing deliveries or the hotel. Contrarian&#x27;s &quot;6,500 or more&quot; is off by a hair. The exact breach point is above 6,500 lb.</li>
+</ul>
+<li><strong>Upside framing.</strong> Expansionist&#x27;s asks (right of first offer, referrals, relationship value) are speculative and unquantified. They are reasonable negotiation asks, but they do not justify signing anything. Its claim that B leaves about 1,000 lb of ordinary-week spare capacity is wrong. Spare normal capacity is 500 lb.</li>
+<li><strong>The Outsider answer</strong> had no analysis or recommendation. Reviewers unanimously judged it the weakest. Its point that no capacity or cash table was given was fair, but it did not build one.</li>
+</ul></section>
+<section class="card blind"><h2>Blind Spots the Council Caught</h2><ul>
+<li><strong>Zero peak-week slack in A.</strong> Executor and Outsider made this explicit.</li>
+<li><strong>Weeks 14-26 capacity trigger.</strong> Contrarian identified the specific volume that breaks the 9,000 lb ceiling.</li>
+<li><strong>Sizing the fix.</strong> First Principles gave a number for the cash relief. Review then exposed the disagreement between that number and Executor&#x27;s.</li>
+<li><strong>Errors caught.</strong> Reviewers flagged the $18,600 versus $17,500 error and Expansionist&#x27;s 1,000 lb spare-capacity claim.</li>
+<li><strong>Gaps that no answer covered, found in review:</strong></li>
+<ul>
+<li><strong>Overtime dependence:</strong> B&#x27;s peak weeks (800 lb overtime) also rely on the overtime arrangement, so it must be confirmed for B too.</li>
+<li><strong>B plus C:</strong> in peak weeks B&#x27;s 8,800 lb plus one 400 lb prospect is 9,200 lb, above the 9,000 lb ceiling. B and C are not freely combinable at peak.</li>
+<li><strong>Receivables at week 13:</strong> unpaid hotel invoices remain at week 13 (about four weeks under agreed terms, six under delay). Cash for weeks 14-17 under A was not tested against the floor.</li>
+<li><strong>Longer delays:</strong> no one tested a delay beyond two weeks. A has no exit for 26 weeks, so this matters.</li>
+<li><strong>Hybrid A terms:</strong> a lower peak cap or lower paid minimum was not explored. It could remove the peak-week zero-slack problem.</li>
+</ul>
+<li><strong>Not settled:</strong> the cost of a serious service failure is unquantified in the brief, and the breakdown probability is unknown.</li>
+</ul></section>
+<section class="card rec"><h2>The Recommendation</h2><p>Pursue B first, with A as a conditional fallback.</p>
+<ul>
+<li><strong>Send B as written.</strong> That means 1,500 lb per ordinary week and 1,800 lb per peak week at $1.60, with $180/week account cost and $2,500 setup. Sign if the hotel accepts it as proposed. B keeps cash near $17,500 even under a two-week delay, needs no partner, and needs overtime only in peak weeks (800 lb). It gives up about $435 of profit over A, which is a reasonable price for resilience. Maya has said she will trade some profit for resilience, though without a dollar value.</li>
+<li><strong>Confirm the overtime arrangement in writing before signing anything.</strong> B needs 800 lb in peak weeks.</li>
+<li><strong>Include a conditional A in the same message.</strong> Maya would sign A by September 8 only if all of these hold in writing:</li>
+<ul>
+<li><strong>Cash relief:</strong> a deposit or faster payment that keeps every week-end at or above $10,000 under a two-week delay, with margin above the roughly $1,800 minimum. Timing must be before the end of week 5.</li>
+<li><strong>Weeks 14-26:</strong> an exit after week 13 or a cap, or Maya confirms she can serve those weeks together with a written partner reservation for them.</li>
+<li><strong>Peak capacity:</strong> the overtime arrangement (1,000 lb/week) and the partner reservation (1,000 lb/week for peak weeks) are confirmed in writing.</li>
+</ul>
+<li><strong>If B is refused and A&#x27;s conditions are refused, decline and pursue C.</strong> C is uncertain, but it protects the floor and existing deliveries. Don&#x27;t count the two prospects as guaranteed revenue.</li>
+</ul>
+<p><strong>What would change this:</strong></p>
+<ul>
+<li>If Maya explicitly lowers the $10,000 floor, A becomes viable on cash. Only she can do that.</li>
+<li>If the hotel offers acceptable payment terms and a post-week-13 exit or capacity cover, A becomes viable.</li>
+<li>If the C prospects commit, declining looks better. Check peak-week capacity first, because B plus one prospect exceeds 9,000 lb.</li>
+</ul>
+<p><strong>Material uncertainties:</strong> the hotel&#x27;s response to B and to the A conditions; breakdown risk; post-week-13 demand; and the cost of a serious service failure.</p>
+<p>Whether the requested terms are attainable cannot be settled from the supplied information. B and the A conditions are negotiation requests, not available resources.</p></section>
+<section class="card first"><h2>The One Thing to Do First</h2><p>Within the two-hour budget, call the hotel and send the written proposal before September 6. It should contain B in full plus the conditional A terms above. Before that call, spend a few minutes confirming the overtime arrangement, because B&#x27;s peak weeks depend on it.</p></section>
+
+
+<h2 style="margin-top:22px">Advisor answers (verbatim)</h2>
+<p class="sub">Shown with lenses revealed after review. Word counts exceeded the guideline for several advisors; not retried.</p>
+<details><summary>Contrarian <span class="tag">Response B</span></summary><div class="body"><p><strong>Most vulnerable assumption: that the hotel pays on the agreed four-week schedule.</strong> Option A only clears Maya&#x27;s $10,000 floor if that holds.</p>
+<p><strong>Option A cash, agreed timing.</strong> I worked this through week by week.</p>
+<ul>
+<li>Setup takes cash to $18,000.</li>
+<li>Existing customers net +$1,000 in an ordinary week and +$1,900 in a peak week.</li>
+<li>The hotel work costs about $2,550 in an ordinary week: $2,125 base, $250 account cost and $175 overtime on 500 lb.</li>
+<li>It costs about $3,700 in a peak week: 1,000 lb goes to the partner at $1.40, and 1,000 lb of in-house hotel work carries overtime.</li>
+<li>Weeks 1-3 each net about -$1,550, and week 4 nets -$1,800.</li>
+<li>Cash bottoms at about $11,550 at the end of week 4, then recovers once hotel receipts start in week 5.</li>
+</ul>
+<p><strong>Option A cash, two-week delay.</strong></p>
+<ul>
+<li>Week 5 ends near $9,750.</li>
+<li>Week 6 ends near $8,200.</li>
+<li>Both are below the floor, which Maya has said is a hard constraint. Week 7 recovers to about $10,400.</li>
+<li>With no deposit, faster payment or credit line agreed, A fails the stress case as written. It is not a marginal miss, because the floor is breached for at least two week-ends.</li>
+</ul>
+<p><strong>Option A earnings.</strong> Over 13 weeks, hotel profit is roughly $1,200 per ordinary week and $800 per peak week. That is about $14,000, or about $10,000 after setup. It is positive, but the margin is thin relative to the operational exposure.</p>
+<p><strong>Second flaw: weeks 14-26.</strong></p>
+<ul>
+<li>The 2,500 lb/week paid minimum continues, with no exit.</li>
+<li>Existing workload after week 13 is unknown.</li>
+<li>The overflow partner is not reserved for that period.</li>
+<li>Existing load of 6,000 lb plus 2,500 lb already needs overtime. The hard ceiling is 9,000 lb.</li>
+<li>If existing volume reaches 6,500 lb or more with hotel volume at the 2,500 lb minimum, the total exceeds 9,000 lb. Maya would then miss existing deliveries or fail the hotel.</li>
+<li>Any equipment or staff problem also has no buffer. There is no spare line and no quantified breakdown risk.</li>
+<li>Overtime is &quot;confirmed&quot; only as a stipulation. If it slips, weeks 1-3 already run at 8,500 lb against 8,000 lb of normal capacity.</li>
+</ul>
+<p><strong>Option B</strong> passes both cases.</p>
+<ul>
+<li>Under a delay, its cash minimum is about $17,500.</li>
+<li>It needs no partner in ordinary weeks and only 800 lb of overtime in peak weeks.</li>
+<li>Its weakness is that the hotel may reject it. It also gives no growth right, and B expires at week 13.</li>
+</ul>
+<p><strong>Option C</strong> is safe on cash but rests on uncommitted prospects. Its upside is at most about $720 per week, and only if both prospects sign.</p>
+<p><strong>Recommendation from this lens.</strong> Do not sign A as written. Send B by September 6. If B is rejected, sign A only if the hotel agrees to one of these:</p>
+<ul>
+<li>a deposit, or faster payment, large enough to keep cash at or above $10,000 under a two-week delay;</li>
+<li>a cap or exit for weeks 14-26.</li>
+</ul>
+<p>If neither is agreed, fall back to C.</p></div></details>
+<details><summary>First Principles Thinker <span class="tag">Response D</span></summary><div class="body"><p><strong>What we are actually solving.</strong> Maya wants dependable extra earnings without missing deliveries, breaching the $10,000 cash floor, or working weekends. Maximum profit is not the goal, so the useful comparison is profit against how much of the floor and capacity buffer each option uses up. I computed the figures below from the brief&#x27;s inputs.</p>
+<p><strong>Option A (full contract)</strong></p>
+<ul>
+<li>Ordinary weeks need 8,500 lb, which uses 500 lb of overtime. Peak weeks need 10,000 lb, so both the full 1,000 lb of overtime and the full 1,000 lb of partner capacity are needed.</li>
+<li>Hotel margin is about $1,200 in an ordinary week and $800 in a peak week. Over 13 weeks that is $14,000 less $4,000 setup, or about $10,000.</li>
+<li>Cash falls because costs are paid weekly while receipts lag four weeks. With payment as agreed, the low point is about $11,550 at week 4, which passes the floor.</li>
+<li>With a two-week delay, cash reaches about $9,750 at week 5 and about $8,200 at week 6. That breaches the hard floor.</li>
+<li>Rough fix: A needs about $1,800 or more of cash relief, such as a deposit or faster payment, to pass the stress case.</li>
+<li>A also uses every unit of capacity in peak weeks, with no slack for a breakdown. It then locks Maya into 13 more weeks with a 2,500 lb minimum and no reserved overflow.</li>
+</ul>
+<p><strong>Option B (smaller allocation)</strong></p>
+<ul>
+<li>Ordinary weeks need 7,500 lb and peak weeks 8,800 lb. Overtime is needed only in peak weeks (800 lb), and no outsourcing is needed.</li>
+<li>Margin is about $945 in an ordinary week and $890 in a peak week. Over 13 weeks that is about $12,065 less $2,500 setup, or about $9,565.</li>
+<li>That is only about $435 less than A, with far less exposure.</li>
+<li>Cash stays above roughly $17,500 even with a two-week delay.</li>
+<li>It leaves about 500 lb of normal capacity spare in ordinary weeks, plus the reserved overtime and partner capacity as backup.</li>
+<li>The catch is that B is not an available offer, and the hotel may reject it.</li>
+</ul>
+<p><strong>Option C (decline)</strong></p>
+<ul>
+<li>The two prospects could add up to about $720 a week, or about $9,360 over 13 weeks. This is an upper bound, since neither has committed or given a start date, so it cannot be counted on.</li>
+<li>It is the safest option but the least dependable earner.</li>
+</ul>
+<p><strong>Framing challenge.</strong> A&#x27;s extra $435 of profit over B is small next to A&#x27;s fragility, so the decision is less &quot;big versus small&quot; than &quot;can the risk be priced&quot;. Weeks 14-26 are also unforecast, and B&#x27;s 13-week term avoids that commitment.</p>
+<p><strong>Recommendation.</strong> Send B in writing by September 6, since the two-hour call and proposal fit Maya&#x27;s time budget. Sign only if the terms stay as proposed. If the hotel refuses B, take A only if it adds a deposit or faster payment worth at least about $1,800 of relief, and only if the partner is also reserved for weeks 14-26 or Maya confirms she can serve those weeks. If neither condition is met, decline and pursue C. A without relief fails the hard floor under the stress case.</p>
+<p><strong>What would change this.</strong></p>
+<ul>
+<li>If the hotel offers acceptable payment terms, A becomes viable.</li>
+<li>If Maya explicitly lowers the floor, A becomes viable.</li>
+<li>If C prospects commit, declining becomes more attractive.</li>
+</ul>
+<p><strong>Uncertainties.</strong> These are unquantified: the breakdown risk, post-week-13 demand, and the hotel&#x27;s response.</p></div></details>
+<details><summary>Expansionist <span class="tag">Response E</span></summary><div class="body"><p>The overlooked upside is that a well-structured smaller deal captures most of A&#x27;s earnings, and a working relationship with the hotel may be worth more than the first 13 weeks. My figures below are derived from the brief&#x27;s stipulated inputs.</p>
+<p><strong>Earnings, 13 weeks, net of setup</strong></p>
+<ul>
+<li>A: about $10,000. Ordinary weeks earn $1,200 each, after 500 lb of overtime. Peak weeks earn $800 each, after 1,000 lb of overtime and 1,000 lb outsourced at $1.40. That gives $14,000 less $4,000 setup.</li>
+<li>B: about $9,565. Ordinary weeks earn $945 and peak weeks $890. That is $12,065 less $2,500 setup. B earns roughly 96% of A&#x27;s profit on about 60% of the volume. It also stays within 9,000 lb in every week, so it needs no outsourcing and only modest overtime.</li>
+<li>C: the two prospects would add about $720/week, or about $9,400 over 13 weeks. They are uncommitted, so that figure is a ceiling and not a forecast. It shows that B&#x27;s earnings are comparable to what modest organic growth could bring.</li>
+</ul>
+<p><strong>Cash under A</strong></p>
+<ul>
+<li>On the agreed four-week payment terms, A&#x27;s low point is about $11,550 at the end of week 4, so it clears the $10,000 floor.</li>
+<li>With a two-week delay to every hotel payment, week 5 ends at about $9,750, which breaches the floor. A therefore fails the stress case unless the hotel agrees to different terms.</li>
+<li>B&#x27;s smaller weekly outlay, and its smaller setup cost, probably leaves more headroom. Maya should verify this before relying on it.</li>
+</ul>
+<p><strong>Upside if this works better than expected</strong></p>
+<ul>
+<li>Use the hotel&#x27;s need for one supplier as leverage. Ask for B, with a written right of first offer on the remaining volume once ClearFold has shown service reliability. This is a negotiation request, not an available resource. If it works, Maya could reach A-scale volume later, with the hotel&#x27;s payment behaviour already observed.</li>
+<li>Make the payment terms the trade. Ask for net-14 or net-7 payment in exchange for A&#x27;s volume, or for setup cost to be reimbursed. Each concession that shortens the cash lag makes the larger contract feasible. It would also turn A&#x27;s 26-week guaranteed minimum into a real advantage.</li>
+<li>Ask for a reference or a referral. A hotel group is a credential that could attract other accommodation businesses. That is a possibility, not something I can quantify.</li>
+<li>Keep the option to grow. After week 13, existing volumes are unknown. B leaves about 1,000 lb of capacity in ordinary weeks that C&#x27;s prospects or a renewal could fill.</li>
+</ul>
+<p><strong>Recommendation</strong></p>
+<p>Send the two-hour written proposal for B by September 6. Include a renewal or expansion clause and faster payment as asks. Accept A only if the payment terms keep cash at or above $10,000 under the two-week-delay stress case. Otherwise, fall back to C.</p></div></details>
+<details><summary>Outsider <span class="tag">Response C</span></summary><div class="body"><p>Outsider reading: what a newcomer would find confusing or unconvincing.</p>
+<ul>
+<li>Capacity arithmetic is not stated, so the core question is hidden. A reader must work out that peak weeks are 7,000 existing plus 3,000 hotel = 10,000 lb against a hard 9,000 in-house ceiling (8,000 normal plus 1,000 overtime). That leaves a 1,000 lb gap, exactly the partner&#x27;s reserved amount. There is no slack at all, and the brief never says so. Ordinary weeks are 8,500 lb, which already uses overtime. An outsider would ask: is overtime confirmed for all 13 weeks, and at what cost per pound? Option B peaks (8,800) would need overtime but no partner.</li>
+</ul>
+<ul>
+<li>Jargon and ambiguous terms. &quot;Guaranteed paid minimums and enforceable maximums&quot;, &quot;avoidable cost&quot;, &quot;fixed cost including salary&quot;, &quot;unrestricted cash&quot;, &quot;convenience exit&quot;, &quot;all-in charge&quot; are used without definition. A layperson may not see that a minimum means Maya is paid even if the hotel sends less, or that a cap protects her capacity but also limits upside. &quot;Earnings&quot; versus &quot;cash&quot; is the brief&#x27;s own central distinction, yet the 4-week payment lag is never illustrated. The outsider would not immediately see why a profitable contract can breach a $10,000 floor.</li>
+</ul>
+<ul>
+<li>Unstated assumptions. The $10,000 floor comes from $22,000 cash, but the size of the outlay before receipts arrive (setup plus about four weeks of hotel costs) is left for the reader to compute. The 26-week term is a liability the 13-week analysis ignores: weeks 14-26 have a paid minimum but no reserved partner and an unknown existing workload. Why is a &quot;serious service failure&quot; costly if no amount is stated? That is an unquantified risk, not zero.</li>
+</ul>
+<ul>
+<li>Option B feels unconvincing as a real option. It is not an offer, has no acceptance probability, and the hotel &quot;prefers one supplier&quot;. A reader may see it as a hopeful gesture. The deadline structure (B answer by Sept 6, A expires Sept 8) is workable but leaves only two days.</li>
+</ul>
+<ul>
+<li>Option C. The two prospects are uncommitted, so C&#x27;s earnings are speculative. The brief gives no baseline figure to compare A, B and C against (no stated profit for status quo), so &quot;better&quot; is unclear.</li>
+</ul>
+<ul>
+<li>Odd or unexplained items. &quot;Do not infer hiring or equipment lead times&quot; while also asking about extra capacity. Peak weeks are 4, 5, 9 and 10, yet the partner reservation is peaks only.</li>
+</ul>
+<p>Bottom line: the outsider would want a one-page table of weekly volume against capacity, and cash week-by-week, before trusting any recommendation.</p></div></details>
+<details><summary>Executor <span class="tag">Response A</span></summary><div class="body"><p><strong>Practical path: send Option B to the hotel in writing today, keep A only as a conditional fallback, and don&#x27;t sign A as written.</strong></p>
+<p><strong>What I computed (stipulated inputs, my arithmetic)</strong></p>
+<p>Capacity is the first thing to check, and it is feasible only barely.</p>
+<ul>
+<li>Under A, ordinary weeks total 8,500 lb. That needs 500 lb of overtime.</li>
+<li>Under A, peak weeks total 10,000 lb against 9,000 lb of hard in-house capacity. That uses the full 1,000 lb of partner overflow, so there is zero slack in weeks 4, 5, 9 and 10.</li>
+<li>Under B, the peak total is 8,800 lb, needing only 800 lb of overtime and no outsourcing.</li>
+</ul>
+<p>Weekly cash before hotel receipts, on the hotel work plus existing operations:</p>
+<div class="tw"><table><thead><tr><th></th><th>A ordinary</th><th>A peak</th><th>B ordinary</th><th>B peak</th></tr></thead><tbody><tr><td>Net cash per week</td><td>about -$1,550</td><td>about -$1,800</td><td>about -$455</td><td>about -$90</td></tr></tbody></table></div>
+<p><strong>Cash under A</strong></p>
+<ul>
+<li>Cash is $18,000 after setup.</li>
+<li>It falls to $11,550 at the end of week 4, before the first hotel payment arrives at the end of week 5. That clears the $10,000 floor by only $1,550.</li>
+<li>With a two-week payment delay, cash reaches about $9,750 in week 5 and $8,200 in week 6. That breaches the floor.</li>
+<li>Any breakdown or rewash surge would also eat the $1,550 cushion. A therefore fails the hard constraint under the stress case.</li>
+</ul>
+<p><strong>Earnings over 13 weeks</strong></p>
+<ul>
+<li>A earns about $10,000 after setup.</li>
+<li>B earns about $9,565.</li>
+<li>B gives up roughly $435 of profit but has a minimum cash of about $18,600 even with the delay. That is comfortably above the floor.</li>
+<li>A also locks Maya into 26 weeks with no exit. Weeks 14-26 carry a 2,500 lb minimum with no reserved overflow and no forecast of existing demand.</li>
+</ul>
+<p><strong>Option C</strong> adds at most about $720/week if both prospects sign. Neither has committed, so it is not a base case.</p>
+<p><strong>First action (about 2 hours, before September 6)</strong></p>
+<p>Call the hotel and follow up with the written B proposal. In the same message, offer a fallback version of A that Maya would sign by September 8 only if one of these is agreed:</p>
+<ul>
+<li>payment within 1-2 weeks, or a deposit of at least $5,000; or</li>
+<li>a right to exit after 13 weeks.</li>
+</ul>
+<p>Maya should also confirm two things in writing before signing anything:</p>
+<ul>
+<li>the overtime arrangement for the full 1,000 lb per week;</li>
+<li>the partner&#x27;s reservation, including that it extends past week 13.</li>
+</ul>
+<p><strong>What would change this</strong></p>
+<ul>
+<li>A becomes acceptable only if the stress-case cash stays at or above $10,000. Faster payment or a deposit would achieve that, and the confirmed overtime and partner capacity are prerequisites.</li>
+<li>If the hotel refuses B and refuses any A change, decline and pursue C. A as written breaches the floor under the stress case, and Maya cannot waive that floor for herself here.</li>
+</ul>
+<p><strong>Assumption to flag:</strong> I treated existing customer receipts as same-week, as stipulated. The margin figures above depend on that.</p></div></details>
+
+
+<h2 style="margin-top:22px">Blind review highlights</h2>
+<p class="sub">Reviewers saw Responses A–E without lens labels: A = Executor, B = Contrarian, C = Outsider, D = First Principles, E = Expansionist. Strongest picked: D ×2, B ×2, A ×1. Biggest blind spot picked: C ×4, E ×1. Full reviews below (verbatim).</p>
+<details><summary>Reviewer 1 <span class="tag">order ABCDE</span> <span class="tag">strongest D</span> <span class="tag">blind spot C</span></summary><div class="body"><p><strong>1. Strongest: D.</strong> Its arithmetic matches my recomputation. Option A&#x27;s weekly cash is about -$1,550 in ordinary weeks and -$1,800 in peak weeks, giving lows of $11,550 (week 4) and $8,200 (week 6) under the delay. B&#x27;s $9,565 profit and roughly $17,500 stress-case low are also right. D goes beyond the others by sizing the fix: A needs about $1,800 of cash relief to pass the stress case, which makes the negotiation ask concrete. It also states the key trade-off, that A earns only about $435 more than B while using every unit of peak capacity. Its conditions cover both the payment terms and weeks 14-26.</p>
+<p><strong>2. Biggest blind spot: C.</strong> It doesn&#x27;t answer the brief. It is a &quot;newcomer confusion&quot; critique with no computation, no cash test, no stress case and no recommendation. It also wrongly says the brief gives no baseline. One is derivable: about $1,000 a week in ordinary weeks and $1,900 in peak weeks.</p>
+<p><strong>3. Missed by all five (checked):</strong></p>
+<ul>
+<li><strong>Hybrid asks.</strong> No answer proposes a version between A and B, such as A with a lower peak cap or a lower paid minimum. That could avoid the zero-slack peak weeks. Only D sizes the cash relief needed.</li>
+<li><strong>Longer delays.</strong> No answer tests a delay beyond two weeks, or asks what happens if a slow payer delays again. That matters because A has no exit for 26 weeks.</li>
+<li><strong>Overtime for B.</strong> B&#x27;s peak weeks also depend on the overtime arrangement, which is only stipulated as confirmed. No answer lists it as a condition to verify for B.</li>
+</ul></div></details>
+<details><summary>Reviewer 2 <span class="tag">order BCDEA</span> <span class="tag">strongest A</span> <span class="tag">blind spot C</span></summary><div class="body"><p><strong>1. Strongest: A.</strong> It checks capacity week by week and shows peak weeks have zero slack (10,000 lb against 9,000 lb in-house plus 1,000 lb partner). It also shows A fails the hard floor under the two-week delay, with cash at about $9,750 and about $8,200. B stays clear of the floor. Its first action is concrete and fits the two-hour budget: B plus a conditional A fallback with specific asks (a deposit of at least $5,000, payment within 1–2 weeks, or an exit after week 13). It also lists what to confirm in writing before signing. One small error: A says B&#x27;s minimum cash under delay is about $18,600. My check gives about $17,500, as B and D state. The conclusion is unaffected.</p>
+<p><strong>2. Biggest blind spot: C.</strong> It gives no analysis or recommendation. It reads as a newcomer-confusion critique, and it doesn&#x27;t test the floor or compute any option&#x27;s earnings. Some of its points are fair, such as the missing status-quo baseline and the unquantified failure risk. But it offers the council no decision-relevant numbers. E is a weaker second. It leaves B&#x27;s cash headroom unverified (&quot;probably… verify&quot;) and leans on speculative upside.</p>
+<p><strong>3. Missed by all:</strong> No additional gap identified. Every response covers the stress-case breach, the weeks 14–26 exposure, B&#x27;s rejection risk, and C&#x27;s uncommitted status. D and A differ on how large a deposit is needed (about $1,800 versus $5,000+). That is a disagreement to reconcile, not a gap.</p></div></details>
+<details><summary>Reviewer 3 <span class="tag">order CDEAB</span> <span class="tag">strongest B</span> <span class="tag">blind spot C</span></summary><div class="body"><p><strong>1. Strongest: B.</strong> It works cash week by week and shows the two-week-delay breach in weeks 5 and 6. It counts that breach as two week-ends below a hard floor. Its check of weeks 14-26 is the most useful: existing volume of 6,500 lb or more plus the 2,500 lb minimum exceeds the 9,000 lb ceiling, with no partner reserved. It also names the deposit, faster-payment and exit conditions. I checked its figures against the brief and they hold.</p>
+<p><strong>2. Biggest blind spot: C.</strong> It has no cash table, no earnings comparison and no recommendation. It notes that no status-quo baseline is given but never builds one from the brief&#x27;s inputs. It also never reaches the stress-case floor breach.</p>
+<p>Two smaller errors:</p>
+<ul>
+<li>A puts B&#x27;s minimum cash at about $18,600. B and D both give about $17,500, which I confirmed (week 6 under delay).</li>
+<li>E says B leaves about 1,000 lb of spare capacity in ordinary weeks. Normal spare is 500 lb.</li>
+</ul>
+<p><strong>3. Missed by all:</strong></p>
+<ul>
+<li>Nobody puts a number on A&#x27;s post-13-week economics. The paid minimum is itself roughly profitable if capacity holds, so the cost of rejecting A is not weighed.</li>
+<li>Nobody tests whether B and C&#x27;s prospects fit together within capacity.</li>
+<li>Nobody tests a hybrid, such as sending B and a conditional A in one message. The single reply due September 6 leaves only two days before A expires.</li>
+</ul></div></details>
+<details><summary>Reviewer 4 <span class="tag">order DEABC</span> <span class="tag">strongest B</span> <span class="tag">blind spot C</span></summary><div class="body"><p>I re-derived the key figures from the brief. A&#x27;s hotel margin is $1,200 in an ordinary week and $800 in a peak week, about $10,000 net of setup. A&#x27;s cash low is $11,550 at week 4 on agreed terms, and $9,750 and $8,200 at weeks 5 and 6 under the two-week delay. B&#x27;s margin is $945 and $890 a week, about $9,565 net, and B&#x27;s stress-case cash minimum is about $17,500. Responses B, D and E match these figures.</p>
+<ul>
+<li>Strongest: B. It shows the week-by-week cash logic and treats the hotel&#x27;s payment timing as the vulnerable assumption. It also finds the weeks 14-26 problem with a concrete trigger. Existing volume of 6,500 lb or more plus the 2,500 lb minimum exceeds the 9,000 lb ceiling, and no partner is reserved for that period. Its conditions for signing A are testable. D is close, and it quantifies the roughly $1,800 relief A needs.</li>
+</ul>
+<ul>
+<li>Biggest blind spot: C. It is only a critique of the brief&#x27;s clarity. It has no computed figures, no comparison of the options, no recommendation, and no answers on conditions to sign or what to do if terms are refused. Response A also has a small error. It says B&#x27;s stress-case minimum is about $18,600, but it is about $17,500.</li>
+</ul>
+<ul>
+<li>Missed by all five:</li>
+<li>Earnings versus cash at week 13. Several weeks of hotel invoices are still unpaid then, and none of the responses quantifies that receivable.</li>
+<li>Any intermediate deal, such as A&#x27;s volume without peak reliance on the partner. None of them explores it.</li>
+<li>A deposit or faster payment must arrive before week 5 to cure the shortfall. Only D and A give it a size, and neither gives a timing.</li>
+</ul></div></details>
+<details><summary>Reviewer 5 <span class="tag">order EABCD</span> <span class="tag">strongest D</span> <span class="tag">blind spot E</span></summary><div class="body"><p>I checked the cash and margin figures against the brief. A&#x27;s hotel margin is $1,200 in an ordinary week and $800 in a peak week. Cash under A bottoms at $11,550 at the end of week 4. Under the two-week delay it falls to $9,750 in week 5 and $8,200 in week 6, breaching the floor. B&#x27;s stress-case low point is about $17,500.</p>
+<ul>
+<li>Strongest: D.</li>
+<li>It frames the goal as resilience, not maximum profit.</li>
+<li>Its figures are correct, including B&#x27;s stress-case minimum of about $17,500.</li>
+<li>It sizes the fix: A needs about $1,800 of relief to clear the floor under the stress case.</li>
+<li>It adds a second condition for A, either partner cover for weeks 14-26 or Maya confirming she can serve those weeks.</li>
+<li>It gives clear fallbacks and lists what would change the recommendation.</li>
+<li>B (the response) is close. Its analysis of weeks 14-26 is the sharpest, including the point that existing volume of 6,500 lb or more plus the hotel minimum breaches the 9,000 lb ceiling.</li>
+</ul>
+<ul>
+<li>Biggest blind spot: E.</li>
+<li>It never sizes the cash relief needed.</li>
+<li>It says B&#x27;s headroom &quot;probably&quot; holds, when a quick check confirms it.</li>
+<li>It ignores the weeks 14-26 capacity exposure.</li>
+<li>It calls A&#x27;s 26-week minimum a potential advantage, without noting that no partner is reserved and existing load is unknown for that period.</li>
+<li>Its upside points (right of first offer, referrals) are speculative.</li>
+<li>C (the response) gives no analysis and no recommendation, but it is a deliberate newcomer critique, so I don&#x27;t count that as a blind spot.</li>
+<li>A (the response) has a small error: it says B&#x27;s minimum cash is about $18,600 under the delay, when it is about $17,500.</li>
+</ul>
+<ul>
+<li>Missed by all five: receivables outstanding at week 13. Hotel invoices for weeks 10-13 (or 12-13 under the delay) are still unpaid at the end of the 13-week window. Cash tied up there matters for any post-13-week commitment under A. None of the five tests A&#x27;s cash for weeks 14-17 against the floor. None sizes B plus C prospects against peak-week capacity. In peak weeks B&#x27;s 8,800 lb plus 400 lb from one prospect already exceeds 9,000 lb.</li>
+</ul></div></details>
+
+
+<h2 style="margin-top:22px">Run status and limits</h2>
+<section class="card"><ul>
+<li>Complete. First chair attempt superseded because its packet contained five inserted words in the Executor answer; a corrected replacement was used (see transcript §7).</li>
+<li>All workers recorded as <code>claude-sonnet-5-5</code>; isolation and tool restrictions not independently verified. Only the return call was observed as a tool use.</li>
+<li>Previewed with headless Chrome at 1200 px and in a 390 px frame (top of page only: verdict, qualifications, first synthesis section). Lower sections, collapsed details, dark mode and other browsers were not checked.</li>
+<li>Files: <code>council-transcript-20260928T231041Z.md</code>, <code>audit-note.md</code>, <code>HANDBACK.md</code>, <code>decision-brief.md</code> (SHA-256 <code>421e44af…626dadd</code>).</li>
+</ul></section>
+</main></body></html>
