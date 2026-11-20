@@ -31,7 +31,7 @@ Each advisor receives the same decision brief and examines it through one thinki
 | **Contrarian** | Fragile assumptions and ways the plan could fail, without inventing flaws | What could fail, and which assumption is most vulnerable? |
 | **First Principles Thinker** | The underlying objective and whether the question is framed correctly | What are we actually trying to solve? |
 | **Expansionist** | Overlooked upside and adjacent opportunities | What happens if this works better than expected? |
-| **Outsider** | Jargon, unstated assumptions, and gaps that a fresh reader would notice | What would someone unfamiliar with this field find confusing or unconvincing? |
+| **Outsider** | Jargon and unstated assumptions a fresh reader notices, and what the owner should clarify before deciding. | What would someone unfamiliar with this field find confusing or unconvincing? |
 | **Executor** | Feasibility, dependencies, and a practical starting point | Can this be done, and what is the first step? |
 
 After all five answers arrive, the coordinator removes explicit role labels and shuffles them into Responses A–E. **Five fresh reviewers** each receive the brief and all five anonymous answers, without the identity mapping or other reviews. The answer text and letter identities stay fixed while presentation order rotates between reviewers. The coordinator records worker inputs and distinguishes verified captures from coordinator copies or reconstructions; repeated record components may be stored once. They ask the same three questions:
