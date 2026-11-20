@@ -4,7 +4,7 @@
 
 The entire council can run in one supported assistant with one model. Portability means choosing a harness, not combining subscriptions.
 
-The repository is the maintained source for installation, releases, and the website. The [sample records](examples/commercial-laundry/) preserve a fictional scenario evaluated in an actual council run, together with its review notes. See [website maintenance](site/README.md) to regenerate the pages.
+The repository is the maintained source for installation, releases, and the website. The [sample records](examples/commercial-laundry/) preserve two complete council runs on the same fictional brief, with the original reports and verification notes. See [website maintenance](site/README.md) to regenerate the pages.
 
 One shared skill for business and technical decisions, with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode 2.x, Factory Droid, and Claude Code**.
 

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Council Report — ClearFold Laundry (20261120T113220Z)</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e2e8f0;
+    --accent: #1e40af;
+    --accent-soft: #eff6ff;
+    --ok-bg: #ecfdf5;
+    --ok-fg: #065f46;
+    --warn-bg: #fffbeb;
+    --warn-fg: #92400e;
+    --bad-bg: #fef2f2;
+    --bad-fg: #991b1b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .badge.ok { background: var(--ok-bg); color: var(--ok-fg); }
+  .badge.warn { background: var(--warn-bg); color: var(--warn-fg); }
+  h1 {
+    font-size: 1.45rem;
+    margin: 0.25rem 0 0.5rem;
+    line-height: 1.25;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    color: var(--text);
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0.4rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .verdict-box {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 1rem 1.15rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  .verdict-box p:first-child { margin-top: 0; }
+  .verdict-box p:last-child { margin-bottom: 0; }
+  .qual-box {
+    border-left: 4px solid #d97706;
+    background: var(--warn-bg);
+    color: var(--warn-fg);
+    padding: 0.9rem 1.1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-size: 0.94rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0.75rem 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 540px;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: #f1f5f9;
+    font-weight: 600;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.65rem;
+    background: #fcfdff;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .worker-body {
+    margin-top: 0.75rem;
+    font-size: 0.93rem;
+    white-space: pre-wrap;
+    color: #1e293b;
+  }
+  ul { padding-left: 1.25rem; margin: 0.4rem 0; }
+  li { margin-bottom: 0.35rem; }
+  .muted { color: var(--muted); font-size: 0.9rem; }
+  .pill-fail { color: var(--bad-fg); font-weight: 600; }
+  .pill-pass { color: var(--ok-fg); font-weight: 600; }
+  @media (max-width: 600px) {
+    body { padding: 0.65rem; }
+    header, .card { padding: 1rem; }
+    h1 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="meta-row">
+      <span class="badge ok">Complete Council (3/3 Rounds)</span>
+      <span class="badge">UTC 20261120T113220Z</span>
+      <span class="badge">Parent: Gemini 4 Hydrogen</span>
+      <span class="badge warn">Worker Effective Model: Unverified (inherit)</span>
+    </div>
+    <h1>ClearFold Laundry: Full Hotel Contract, Smaller Allocation, or Decline?</h1>
+    <p class="muted"><strong>Decision Question:</strong> Maya owns ClearFold Laundry, serving independent restaurants, salons, and small accommodations. Should she accept a hotel group's full-service contract (Option A), seek a smaller allocation (Option B), or decline and keep capacity available for existing customers and gradual growth (Option C)?</p>
+  </header>
+
+  <section class="card">
+    <h2>The Verdict &amp; Next Step</h2>
+    <div class="verdict-box">
+      <p><strong>Recommendation:</strong> Submit <strong>Option B</strong> today for a September 6 decision, do not sign <strong>Option A</strong> under its current terms, and keep <strong>Option C</strong> as the default fallback—while using part of Maya's remaining prep time before September 8 to seek binding start dates from Option C's two prospects.</p>
+      <p><strong>Decisive Conditions:</strong> Approving Option B requires written hotel acceptance by September 6. Approving Option A if Option B is refused is strictly conditional on binding written changes by September 8 that cure both the <strong>$8,200</strong> delayed cash breach (at least a $1,800 deposit, preferably $2,000+, or 2-week payment terms) and the unhedged <strong>Weeks 14–26</strong> peak commitment (a Week 13 exit/reopener or binding 1,000 lb/week partner reservation for Weeks 14–26), alongside clear failure cure periods and ideally a 2,500 lb/week peak cap.</p>
+      <p><strong>The One Thing to Do First:</strong> Today (September 1), use 2 hours of Maya's 8-hour budget to send the written Option B proposal to the hotel (asking for a decision by September 6 without volunteering Option A concessions yet) and contact the overflow partner to verify in writing whether 1,000 lb/week of peak capacity can be reserved for Weeks 14–26.</p>
+    </div>
+
+    <div class="qual-box">
+      <strong>Independent Verification &amp; Audit Notes:</strong>
+      <ul>
+        <li><strong>Deterministic arithmetic check:</strong> All 13-week profit, incremental unit-economics ($435 difference across 13,800 lb = ~$0.03/lb), cash-trough, deposit-shortfall ($1,800), 3-week-lag ($9,750 W5 under 2-week delay), and prospect ($9,360) calculations cited by the Chair and workers verified exact in Python.</li>
+        <li><strong>Attribution qualification:</strong> The Chair's agreement summary attributes Option B's full cash-floor and zero-outsourcing fit to 4 of 5 advisors; strictly, 3 of 5 (Contrarian, First Principles Thinker, Executor) verified Option B's $17,500 delayed trough and capacity fit, Expansionist (4th) cited Option B's $9,565 profit and unused slack, and Outsider focused on Option A's risks and Option C's uncommitted prospects without analyzing Option B's economics.</li>
+        <li><strong>Time-budget note:</strong> Bundling the partner inquiry into today's 2-hour hotel call/proposal block may slightly exceed 2 hours, though it remains well within Maya's 8-hour total budget before September 8.</li>
+        <li><strong>Runtime verification gap:</strong> Factory Droid (<code>1.16.0</code>) ran the parent session on <code>Gemini 4 Hydrogen</code> (<code>reasoningEffort: high</code>) with <code>model: inherit</code> roles and omitted <code>complexity</code>/<code>resume</code>, but does not expose each worker's effective runtime model or reasoning effort in tool outputs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Deterministic 13-Week Comparison (Brief Basis)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>13-Wk Net Profit (incl. setup)</th>
+            <th>Incremental vs. Baseline</th>
+            <th>Peak Load (W4,5,9,10)</th>
+            <th>Min Cash (Agreed)</th>
+            <th>Min Cash (+2-Wk Delay)</th>
+            <th>$10,000 Floor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Baseline (Opt C, 0 prospects)</strong></td>
+            <td>$16,600</td>
+            <td>$0</td>
+            <td>7,000 lb</td>
+            <td>$22,000 (pre-W1)</td>
+            <td>$22,000 (pre-W1)</td>
+            <td class="pill-pass">Pass</td>
+          </tr>
+          <tr>
+            <td><strong>Option B (proposed, 13 wks)</strong></td>
+            <td>$26,165</td>
+            <td>+$9,565</td>
+            <td>8,800 lb (200 OT slack)</td>
+            <td>$18,045 (W4)</td>
+            <td>$17,500 (W6)</td>
+            <td class="pill-pass">Pass</td>
+          </tr>
+          <tr>
+            <td><strong>Option A (offered, 26 wks)</strong></td>
+            <td>$26,600</td>
+            <td>+$10,000</td>
+            <td>10,000 lb (0 slack)</td>
+            <td>$11,550 (W4)</td>
+            <td>$8,200 (W6; $9,750 W5)</td>
+            <td class="pill-fail">Fail</td>
+          </tr>
+          <tr>
+            <td><strong>Option C (both prospects W1)</strong></td>
+            <td>$25,960</td>
+            <td>+$9,360 (uncommitted)</td>
+            <td>7,800 lb (200 reg slack)</td>
+            <td>$22,000 (pre-W1)</td>
+            <td>$22,000 (pre-W1)</td>
+            <td class="pill-pass">Pass (if signed)</td>
+          </tr>
+          <tr>
+            <td><strong>Modified A (2-wk lag or ≥$1,800 dep.)</strong></td>
+            <td>$26,600</td>
+            <td>+$10,000</td>
+            <td>10,000 lb (9,500 if 2,500 flat)</td>
+            <td>≥$11,550</td>
+            <td>≥$10,000 ($11,550 @ 2-wk lag)</td>
+            <td class="pill-pass">Conditional</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Agreement, Disagreement &amp; Review Highlights</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Where the Council Agrees</h3>
+        <ul>
+          <li><strong>Option B fits Maya's constraints:</strong> Captures $9,565 (within $435 of Option A's $10,000), keeps ordinary weeks within 8,000 lb regular capacity, avoids third-party peak outsourcing, and holds cash at ≥$17,500 under a 2-week payment delay.</li>
+          <li><strong>Option A as written fails hard constraints:</strong> Breaches the $10,000 cash floor ($8,200 at Week 6 under delay), leaves zero peak slack (10,000 lb on a single line), and locks ClearFold into Weeks 14–26 with unreserved overflow.</li>
+          <li><strong>Earnings vs. cash diverge:</strong> Upfront setup ($4,000) and a 4-week payment lag drain working capital before Week 1's invoice settles.</li>
+          <li><strong>Option C prospects are uncommitted:</strong> Two 400 lb/week leads cannot be treated as guaranteed revenue without start dates.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where the Council Clashes</h3>
+        <ul>
+          <li><strong>Upside vs. single-line resilience:</strong> Expansionist highlights Option A's post-setup 26-week run rate (~$14,000 in Weeks 14–26 if baseline/overflow hold) and stacking prospects onto Option B ($16,380 total); the other four advisors and all five reviewers counter that Weeks 14–26 overflow is unreserved and 9,600–10,000 lb peaks leave fragile single-line slack.</li>
+          <li><strong>Negotiation sequence:</strong> Executor tests Option A deposit/payment relief on today's initial call; First Principles Thinker (backed by Reviewer 4) pitches Option B cleanly first and checks partner renewal quietly to preserve leverage.</li>
+          <li><strong>Deposit minimum:</strong> $1,800 exact floor cure (First Principles) vs. ≥$2,000 buffer (Executor).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Blind Spots Caught in Peer Review</h3>
+    <ul>
+      <li><strong>Zero-slack single-line exposure in upside cases (Reviewers 1–5):</strong> Unanimously flagged that Option A's 10,000 lb peaks (and 9,600 lb in Expansionist's stacking play) carry unpriced breakdown and service-failure termination risk.</li>
+      <li><strong>Flattening Option A's peak cap (Reviewer 3):</strong> Proposing a 2,500 lb/week peak cap alongside cash/overflow fixes restores 500 lb of peak slack if the hotel demands a single supplier.</li>
+      <li><strong>Relaxing Maya's cash floor (Reviewer 2):</strong> No advisor asked whether Maya would waive the $10,000 floor down to $8,200 if all concessions fail (forbidden for the council to waive unilaterally).</li>
+      <li><strong>Converting Option C's prospects before Sept 8 (Reviewer 5):</strong> Binding Week 1 commitments from both 400 lb/week prospects yield $9,360 with $0 setup, zero overtime, and same-week cash—nearly matching Option B ($9,565).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Chair Synthesis (Verbatim)</h2>
+    <details open>
+      <summary>Chair Verdict — Task ID 1b095b0a-e69f-46b0-94dd-ff6841554c8d</summary>
+      <div class="worker-body">- **Where the Council Agrees:**
+  - **Option B is the cleanest commercial path if the hotel accepts it.** Four of five advisors (and all five blind reviewers) recognize that Option B captures nearly all of Option A&#39;s 13-week incremental profit (**$9,565** vs. **$10,000**) while keeping ordinary weeks inside normal capacity (7,500 lb of 8,000 lb), eliminating third-party outsourcing, and preserving a **$7,500+** cushion above Maya&#39;s $10,000 cash floor even under a two-week payment delay (**$17,500** Week 6 trough).
+  - **Option A as written violates Maya&#39;s hard constraints.** The advisors who stress-tested operations and liquidity (Contrarian, First Principles Thinker, Outsider, Executor) establish—and the Expansionist acknowledges—that Option A&#39;s **$435** 13-week profit edge over Option B comes at the cost of: (1) breaching the hard **$10,000** cash floor under the two-week payment delay test (**$9,750** in Week 5; **$8,200** in Week 6, after dipping to **$11,550** in Week 4 under agreed terms), (2) running at **100% capacity (10,000 lb/week)** across normal, overtime, and overflow partner capacity on a single production line during the four peak weeks, and (3) locking ClearFold into **Weeks 14–26** with no convenience exit, unforecast baseline demand, and unreserved partner overflow.
+  - **Profit and cash availability diverge sharply.** Existing customers pay same-week, whereas hotel invoices lag four weeks. Under Option A, Maya funds **$4,000** upfront setup plus four weeks of unpaid hotel costs (**$2,550/week** ordinary; **$3,700/week** peak) before Week 1&#39;s check arrives, turning ClearFold into an uncompensated lender with no credit line.
+  - **Uncommitted Option C prospects cannot be booked as guaranteed earnings.** All five advisors agree the two 400 lb/week prospects have no commitments or start dates and must remain conditional until signed.
+
+- **Where the Council Clashes:**
+  - **26-week amortization and capacity stacking vs. single-line resilience (Expansionist vs. First Principles Thinker, Executor, Contrarian, Outsider):**
+    - The Expansionist argues that a 13-week window penalizes Option A with its full $4,000 setup cost, hiding ~$14,000 in potential Weeks 14–26 earnings if baseline demand and partner pricing hold, and proposes stacking Option C&#39;s two 400 lb/week prospects onto Option B (routing 600 lb/week of peak hotel volume to the partner) to reach **$16,380** in 13-week incremental profit.
+    - The remaining four advisors—backed unanimously by all five blind reviewers—counter that Option A&#39;s Weeks 14–26 &quot;engine&quot; is an unhedged liability because overflow is **not reserved** past Week 13 and post-Week-13 baseline volumes are unknown, while stacking assumes uncommitted Week 1 prospect conversion and pushes peak load to 9,600 lb/week.
+  - **Opening negotiation sequence (Executor vs. First Principles Thinker):**
+    - The Executor recommends pitching Option B on today&#39;s call while simultaneously testing whether the hotel will grant faster payment or a deposit if it insists on Option A.
+    - The First Principles Thinker (supported by Reviewer 4) advises pitching Option B cleanly first without signaling Option A fallback concessions before September 6, while quietly checking Weeks 14–26 partner availability—preserving negotiating leverage until the hotel responds.
+  - **Deposit threshold for modifying Option A:**
+    - First Principles Thinker identifies **$1,800** as the exact minimum upfront deposit needed to raise Option A&#39;s $8,200 delayed trough to $10,000 (or 2-week payment terms), while Executor calls for **at least $2,000** (plus Weeks 14–26 overflow) to leave a minimal buffer.
+
+- **Blind Spots the Council Caught:**
+  Blind peer review (completed across all five Round 1 answers and five Round 2 reviews without missing rounds) exposed four material gaps:
+  - **Single-line zero-slack risk inside upside cases (Reviewers 1–5):** All five reviewers flagged that the Expansionist treated 8,500–10,000 lb/week under Option A as operational proof while ignoring that 10,000 lb peaks leave zero room for equipment downtime or partner delays, threatening account termination and unspecified damages.
+  - **Reducing Option A&#39;s 3,000 lb peak cap (Reviewer 3):** If the hotel refuses a split under Option B because it wants one supplier, no Round 1 advisor suggested asking to flatten Option A&#39;s peak cap to **2,500 lb/week** alongside payment and Weeks 14–26 fixes—eliminating 500 lb of the 10,000 lb bottleneck.
+  - **Testing Maya&#39;s willingness to relax the $10,000 cash floor (Reviewer 2):** No advisor asked whether Maya would deliberately accept a temporary **$8,200** delayed trough if both Option B and Option A payment relief are refused (though under the brief&#39;s rules, the council cannot waive that floor for her).
+  - **Converting Option C&#39;s prospects before September 8 (Reviewer 5):** No advisor tested using part of Maya&#39;s 8-hour prep budget before September 8 to seek binding Week 1 start dates from the two 400 lb/week prospects. At **$9,360** over 13 weeks ($720/week × 13) with **$0 setup**, **zero overtime**, **zero partner reliance**, and **same-week cash**, confirmed commitments from both would nearly match Option B ($9,565) with far less operational and working-capital risk.
+
+- **The Recommendation:**
+  **Submit Option B today for a September 6 decision, do not sign Option A under its current terms, and keep Option C as the default fallback—while using part of Maya&#39;s remaining prep time before September 8 to seek binding start dates from Option C&#39;s two prospects.**
+  - *Decisive conditions:* Approving **Option B** is conditional on written hotel acceptance by September 6. Approving **Option A** if Option B is refused is strictly conditional on binding written changes by September 8 that cure both the **$8,200** delayed cash breach and the unhedged **Weeks 14–26** peak commitment. Checking partner availability or asking prospects to commit is an information check, not approval to accept Option A as written.
+
+  **Trade-offs, Earnings vs. Cash, and Capacity/Payment Assumptions:**
+  - *Earnings vs. cash availability (Weeks 1–13):* Baseline existing work earns **$16,600** ($1,000/week ordinary; $1,900/week peak) and keeps cash **≥$22,000**. **Option B** adds **$9,565** net profit ($12,065 operating minus $2,500 setup) and keeps cash at **$18,045** (Week 4 agreed) and **$17,500** (Week 6 delayed). **Option A** adds **$10,000** net profit ($14,000 operating minus $4,000 setup)—only **$435** (~$0.03/lb) more for **13,800 extra pounds**—while dropping cash to **$11,550** (Week 4 agreed) and **$8,200** (Week 6 delayed) because 100% of setup ($4,000) and four weeks of hotel costs are paid before Week 1&#39;s invoice settles. **Option C** guarantees $0 incremental profit, preserves ≥$22,000 cash, and yields up to **$9,360** only if both 400 lb/week prospects commit from Week 1.
+  - *Capacity and payment assumptions:* Option B peaks at **8,800 lb/week** (800 lb overtime; 200 lb overtime slack; 1,000 lb partner reserve untouched) and ends at Week 13. Option A peaks at **10,000 lb/week** (8,000 regular + 1,000 overtime + 1,000 partner at $1.40/lb, leaving just $0.10/lb margin before the $250/week fee while Maya retains quality liability) on a single line with no spare machine, unquantified breakdown risk, undefined &quot;serious service failure&quot; remedies, and no partner overflow reserved for Weeks 14–26. Weekly-bucket scheduling also assumes daily turnaround promises fit within weekly totals.
+
+  **Conditions Before Signing:**
+  - *Option B:* Written agreement on 1,500/1,800 lb at $1.60/lb, $2,500 setup, 13-week mutual-renewal term, and explicit definition/cure period for service failures.
+  - *Modified Option A (only if Option B is rejected):* All of the following in writing by September 8:
+    1. **Cash-floor protection:** At least a **$1,800** upfront deposit (prefer **$2,000+**) or **2-week** payment terms (3-week terms still drop below $10,000 under a 2-week stress delay) so Week 5–6 cash remains ≥$10,000.
+    2. **Weeks 14–26 protection:** Either a Week 13 exit/reopener clause or a binding written reservation of 1,000 lb/week partner peak capacity for Weeks 14–26.
+    3. **Peak and liability guardrails:** Clear cure periods and defined failure remedies (and ideally a **2,500 lb/week** peak cap to restore 500 lb of peak slack), plus verification that single-line daily turnarounds are feasible at peak load.
+
+  **What Would Change the Recommendation:**
+  - Confirmed Week 1 contracts from both 400 lb/week prospects before September 8 (**$9,360** with $0 setup, zero overtime, and same-week cash) would justify choosing **Option C** outright if Option B is rejected—or outweighing Option B altogether if Maya values simplicity over $205 of incremental profit.
+  - An explicit decision by Maya to lower her cash floor to **$8,200** (or secure credit), combined with written Weeks 14–26 partner overflow and defined service-failure caps, would make Option A&#39;s 26-week earnings case viable.
+  - Evidence of material single-line breakdown risk or daily turnaround collisions would rule out Option A&#39;s 10,000 lb peaks even with payment relief and favor Option C.
+
+  **What to Do If Requested Terms Are Refused:**
+  - If the hotel rejects Option B by September 6, spend September 6–7 requesting the Option A revisions above (deposit/2-week payment, Weeks 14–26 overflow or Week 13 exit, defined failure remedies, and ideally a 2,500 lb peak cap).
+  - If the hotel refuses those modifications by September 8, **decline the hotel contract and execute Option C**, protecting existing accounts, keeping cash ≥$22,000, and closing the two 400 lb/week prospects.
+
+- **The One Thing to Do First:**
+  Today (September 1), use **2 hours** of Maya&#39;s 8-hour budget to send the written **Option B** proposal to the hotel (asking for a decision by September 6 without volunteering Option A concessions yet) **and** contact the overflow partner to verify in writing whether 1,000 lb/week of peak capacity can be reserved for Weeks 14–26. That preserves 6 hours before September 8 to either finalize Option B, press for revised Option A terms on September 6 if B is rejected, and pursue binding start dates from the two Option C prospects.</div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Round 1: Independent Advisor Responses (Collapsible)</h2>
+    <details>
+      <summary>Response D — Contrarian (Task ID: a005325e-7a22-4906-b6d5-bda897231214)</summary>
+      <div class="worker-body">**Option A carries three compounding failure modes in exchange for minimal incremental profit:**
+
+1. **Breaching the $10,000 cash floor:** After the $4,000 upfront setup and four weeks of funding hotel costs before Week 1&#39;s invoice arrives ($2,550/week incremental cash outlay in ordinary weeks; $3,700/week in peaks), cash troughs at **$11,550** at the end of Week 4 even with punctual hotel payment—leaving only $1,550 of buffer. Under the stipulated two-week payment delay stress test, cash falls to **$9,750 in Week 5** and **$8,200 in Week 6**, violating Maya&#39;s hard $10,000 floor with no credit line or cash injection available.
+2. **Zero-slack peak execution on a single line:** During Weeks 4, 5, 9, and 10, combined volume reaches **10,000 lb/week** (7,000 existing + 3,000 hotel), exhausting 100% of normal capacity (8,000 lb), overtime (1,000 lb), and the overflow partner (1,000 lb). With no separate spare production line and zero leeway to delay existing customers, any unquantified equipment downtime, labor shortfall, or partner miss triggers a hotel service failure—threatening account termination (and unspecified damages) after $4,000 is already sunk.
+3. **The unhedged Weeks 14–26 lock-in:** Option A binds Maya for 26 weeks with no convenience exit and an ongoing 2,500 lb/week obligation, yet the overflow partner is **not reserved** beyond Week 13 and later volumes are unforecast. If existing volume rises or another peak occurs without secured overflow, ClearFold cannot meet both commitments. Crucially, Option A yields **$10,000** in 13-week incremental profit versus **$9,565** under Option B—a **$435** advantage for $1,500 more upfront cash at risk, zero peak slack, and double the term lock-in.
+
+**The most vulnerable assumption in Option B is hotel acceptance:**
+Option B avoids the cash breach (cash stays at or above **$17,500** even with a two-week payment delay) and drops peak volume to 8,800 lb (eliminating partner dependence, though leaving only 200 lb of overtime slack on a single production line). However, it assumes a hotel that prefers one supplier will split its volume. If the hotel rejects Option B by September 6, Maya has two days left before Option A expires—and Option A fails her cash stress test unless accelerated payment or an upfront deposit is newly negotiated.
+
+**Option C&#39;s hidden trap is treating unconfirmed prospects as growth:**
+Declining protects cash ($22,000+ throughout) and capacity, but the two 400 lb/week prospects have **no commitments or start dates**. Relying on them to offset foregone earnings substitutes an unverified sales assumption for guaranteed revenue.</div>
+    </details>
+    <details>
+      <summary>Response E — First Principles Thinker (Task ID: 00b901fc-23de-43d1-a95e-04506bcd11cc)</summary>
+      <div class="worker-body">The brief frames Maya’s decision as choosing among three commercial bids. Rebuilding from her actual objectives—dependable additional earnings, zero missed deliveries on a single production line, no routine weekend work, and a hard $10,000 week-end cash floor—changes the problem: she is not trying to maximize revenue, she is deciding how to monetize **idle regular capacity** (2,000 lb/week ordinary, 1,000 lb/week peak) without turning ClearFold into an unbuffered bank or bottleneck.
+
+**Unit economics expose why Option A is misframed**
+Baseline existing work generates $16,600 in 13-week cash/earnings ($1,000/week ordinary, $1,900/week peak). Against that baseline, Options A and B behave very differently:
+- **Option B** earns **$9,565** net incremental 13-week profit ($12,065 operating profit minus $2,500 setup). It fits inside regular capacity in ordinary weeks, uses 800 lb of overtime in peaks, requires zero outsourcing, and keeps cash at **$17,500** at its Week 6 trough even under a two-week payment delay.
+- **Option A** earns **$10,000** net incremental 13-week profit ($14,000 operating profit minus $4,000 setup)—only **$435 more** than Option B despite adding **13,800 incremental pounds** (~$0.03/lb net). Those extra pounds push ordinary weeks into overtime ($1.20/lb cost) and peak weeks into $1.40/lb outsourcing (leaving $0.10/lb margin while ClearFold retains full quality liability). Worse, Option A drops cash to **$11,550** at Week 4 under agreed terms and **breaches the $10,000 floor at $8,200 in Week 6** under the two-week payment delay test.
+- **Option C** protects cash and capacity ($0 setup), but guarantees $0 incremental earnings; the two 400 lb/week prospects are uncommitted assumptions without start dates.
+
+**What remains materially uncertain**
+Supplied facts cannot resolve: (1) whether the hotel will accept Option B, (2) equipment breakdown frequency on the single line, (3) whether existing demand or the unreserved overflow partner can support Option A’s 2,500–3,000 lb commitment in Weeks 14–26, and (4) when or if Option C’s prospects convert.
+
+**Recommended course and conditions**
+1. **Propose Option B before September 6.** It captures nearly all of Option A’s 13-week profit while preserving a $7,500+ cash buffer above the floor under payment delays and avoiding Weeks 14–26 lock-in.
+2. **If B is rejected, do not sign Option A as written.** Under current terms, it fails Maya’s hard cash constraint under stress and commits unhedged Week 14–26 peak capacity. Before signing A by September 8, require written revisions: (a) working-capital relief (at least a $1,800 upfront deposit/advance or shorter payment lag, e.g., two weeks) and (b) either a Week 13 exit/reopener or secured partner overflow for Weeks 14–26.
+3. **If the hotel refuses both B and revised terms on A, take Option C.**
+
+**First action (within 8 hours):** Use the two-hour window today to submit the Option B written proposal to the hotel, and simultaneously ask the overflow partner whether Weeks 14–26 peak capacity can be reserved in writing—establishing before September 6 whether a renegotiated Option A is even feasible.</div>
+    </details>
+    <details>
+      <summary>Response C — Expansionist (Task ID: 2a756b59-45e9-bc2c-37be-f685dfce)</summary>
+      <div class="worker-body">Evaluating only the 13-week horizon and treating Options A, B, and C as mutually exclusive hides two significant upsides: post-setup amortization under Option A and capacity stacking under Option B.
+
+**1. Post-setup run rate and anchor scale (Option A)**
+Evaluating 13 weeks alone penalizes Option A with its full $4,000 upfront setup, making its $10,000 incremental profit appear barely ahead of Option B’s $9,565. Factually, Option A commits the hotel for 26 weeks at $1.50/lb with a 2,500 lb/week paid minimum and no second setup fee. Once the four-week payment lag cycles through by Week 5 under agreed terms, weekly hotel receipts ($3,750–$4,500) offset outgoing costs. Assuming baseline customer volumes and partner overflow pricing hold in Weeks 14–26 (neither is guaranteed or currently reserved), a comparable 9-ordinary/4-peak mix would generate $14,000 in incremental earnings ($1,200/week ordinary; $800/week peak) while anchoring ClearFold’s $4,400/week fixed overhead against potential baseline softness. Negotiating a deposit or faster payment before September 8—currently an unagreed request—would capture this 26-week engine without breaching the $10,000 cash floor under a two-week payment delay ($8,200 trough at Week 6).
+
+**2. The overlooked stacking play (Option B + smaller prospects)**
+Option B yields $9,565 over 13 weeks while leaving 500 lb/week of normal capacity and 1,000 lb/week of overtime unused in ordinary weeks (and 200 lb overtime plus all 1,000 lb of partner overflow unused in peak weeks). Rather than viewing Option C as an alternative, Maya can stack both 400 lb/week prospects ($1.80/lb, $0.90/lb avoidable cost, same-week cash, zero setup) onto Option B’s slack. Factually, neither prospect has committed or provided a start date. However, if both sign from Week 1 and ClearFold routes 600 lb/week of hotel peak volume to the partner ($1.40/lb replacing $0.85/lb) to keep higher-margin work in-house, those 800 lb/week add $615/week in ordinary weeks (8,300 lb total; 300 lb overtime) and $320/week in peak weeks (9,600 lb total; 200 lb incremental overtime plus 600 lb partner). That assumption adds $6,815 over 13 weeks—lifting incremental profit to $16,380 while same-week cash inflows strengthen liquidity.
+
+**3. Operational optionality if execution exceeds expectations**
+Successfully running at 8,500–10,000 lb/week under Option A—or combining Option B with peak partner overflow—proves ClearFold’s overtime scheduling and third-party quality control under live contractual discipline. While the brief stipulates no post-Week-13 demand forecast or automatic expansion under Option B, smooth execution positions ClearFold as a proven supplier for mutual renewal on better terms, additional hotel volume beyond the 3,000 lb cap, or higher-margin commercial growth after Week 13.</div>
+    </details>
+    <details>
+      <summary>Response B — Outsider (Task ID: 0619d737-45bc-4c36-a515-8c3adce62b07)</summary>
+      <div class="worker-body">Several terms and assumptions in this brief would raise immediate questions for anyone looking at the deal with fresh eyes:
+
+**Undefined terms and unpriced risks**
+- **Setup and cost differences:** The brief leaves unexplained what the $4,000 (Option A) or $2,500 (Option B) one-time setup pays for, why hotel processing is $0.05/lb cheaper than existing accounts ($0.85/lb vs. $0.90/lb), and whether hotel quality standards carry higher rewash or dispute risk than the stipulated baseline already assumes.
+- **&quot;Serious service failure&quot;:** Option A locks ClearFold in for 26 weeks with &quot;no convenience exit&quot; and warns that serious service failure could lose the account, yet no penalty formula, cure period, or definition of &quot;serious failure&quot; is specified.
+- **Unproven overflow liability:** Under Option A, peak outsourced pounds cost $1.40/lb against a $1.50/lb price—leaving just $0.10/lb before the $250/week account fee—while Maya retains full quality and service liability for the partner&#39;s output.
+
+**Fragile assumptions beneath the numbers**
+- **Zero peak slack on a single line:** Option A&#39;s peak weeks (weeks 4, 5, 9, 10) require 10,000 lb (7,000 lb existing plus 3,000 lb hotel), exhausting 100% of normal capacity (8,000 lb), overtime (1,000 lb), and the partner reservation (1,000 lb). With no spare production line and no stated breakdown rate, a minor equipment outage or partner delay threatens turnaround promises across all customers.
+- **Blind second half:** Option A binds Maya through week 26 even though existing workload after week 13 is unforecasted and the overflow partner is not reserved past week 13.
+- **Weekly-bucket scheduling:** The brief stipulates that daily routing does not constrain weekly capacity, which is a modeling convenience rather than an operational guarantee if hotel and restaurant turnarounds cluster on the same days.
+- **Uncommitted growth:** Option C&#39;s two 400 lb/week prospects have no commitments or start dates; treating them as assured earnings would replace fact with optimism.
+
+**Why the payment structure matters**
+Existing customers pay same-week, while Maya pays upfront setup and weekly bills yet waits four weeks for hotel cash—effectively extending an interest-free loan with no deposit or credit line. Under Option A&#39;s stated schedule, cash falls from $22,000 to $11,550 by the end of week 4; under the two-week payment-delay stress test, cash drops to $9,750 in week 5 and $8,200 in week 6, breaching Maya&#39;s hard $10,000 floor.
+
+**What Maya should verify before September 8**
+Before signing, Maya should clarify how &quot;service failure&quot; penalties work, confirm daily turnaround feasibility on her single line, check whether the overflow partner can extend past week 13, and ask for a setup deposit or shorter payment terms so a hotel delay cannot breach her cash floor.</div>
+    </details>
+    <details>
+      <summary>Response A — Executor (Task ID: fce6bf29-723a-4c0d-9bac-b9a382f35b8c)</summary>
+      <div class="worker-body">**Feasibility verdict:** Option B is immediately executable within every hard constraint; Option A as written is operationally fragile and fails the $10,000 cash floor under a two-week payment delay; Option C is the clean fallback if the hotel refuses Option B and refuses payment-term concessions on Option A.
+
+### Operational and cash feasibility (Weeks 1–13)
+
+- **Option B (1,500 lb ordinary / 1,800 lb peak at $1.60/lb, 13-week term):** Feasible without third-party overflow. Total weekly load reaches 7,500 lb in ordinary weeks (500 lb below regular capacity) and 8,800 lb in peak weeks (using 800 lb of overtime, leaving 200 lb of in-house overtime buffer plus the unused 1,000 lb partner reserve). Incremental 13-week profit after the $2,500 setup cost is $9,565 ($26,165 total vs. $16,600 baseline). Cash troughs at $18,045 in week 4 under agreed 4-week payment terms, and at $17,500 in week 6 under the two-week delay stress case—well above the $10,000 floor.
+- **Option A (2,500 lb ordinary / 3,000 lb peak at $1.50/lb, 26-week term):** Earns only $435 more incremental 13-week profit ($10,000) than Option B while introducing three execution blockers:
+  1. **Cash-floor breach under delay:** Under agreed terms, cash drops to $11,550 in week 4. Under a two-week hotel payment delay, cash falls to $9,750 in week 5 and $8,200 in week 6, violating the hard $10,000 floor.
+  2. **Zero peak slack:** Weeks 4, 5, 9, and 10 hit 10,000 lb—100% of combined regular, overtime, and partner capacity—leaving no buffer for equipment downtime on a single-line operation.
+  3. **Unhedged Weeks 14–26 lock-in:** The 2,500 lb/week minimum continues without a convenience exit, while partner overflow is not reserved past week 13 and post-week-13 existing demand is unknown.
+- **Option C (decline):** Preserves $16,600 baseline profit and keeps cash at or above $22,000. The two 400 lb/week prospects are uncommitted and cannot be relied upon for scheduling or earnings.
+
+### Dependencies and conditions before commitment
+
+Option B depends on hotel acceptance by September 6; the hotel prefers a single supplier and may reject a split. If Option B is rejected, Maya has two days before September 8 to either take Option A or decline. Signing Option A should remain conditional on written agreement to either a ≥$2,000 upfront deposit or 2-week (rather than 4-week) payment terms to protect the $10,000 cash floor under a delay, plus partner overflow confirmation for weeks 14–26. Even then, peak-week zero-buffer execution risk remains. If those terms are refused, execute Option C.
+
+### Practical first step (within Maya&#39;s 8-hour budget)
+
+Today (September 1), spend two hours calling the hotel and sending the written Option B proposal (1,500/1,800 lb at $1.60/lb, 13-week term). On the same call, test whether the hotel would grant faster payment or a deposit if it insists on full volume. That preserves six hours between September 6 and September 8 to either finalize setup or pivot cleanly to Option C.</div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Round 2: Blind Peer Reviews (Collapsible)</h2>
+    <details>
+      <summary>Reviewer 1 — Order ABCDE (Task ID: c415e4be-2c02-451d-bc2b-2c8978e50b3b)</summary>
+      <div class="worker-body">1. **Strongest response: E.** E reframes the decision around monetizing idle regular capacity without breaching cash or single-line resilience, exposing the decisive unit economics: Option A adds 13,800 pounds for only $435 more net 13-week profit than Option B (~$0.03/lb) while pushing peaks into $1.40/lb outsourcing and breaching the $10,000 floor at $8,200 under a two-week delay. E verifies every profit and cash figure, flags unresolved uncertainties, sets explicit renegotiation conditions for A if B fails, and gives the sharpest first action (pitching B while confirming Weeks 14–26 partner availability).
+
+2. **Biggest blind spot: C.** While highlighting valid upsides (26-week setup amortization and stacking prospects onto B), C overlooks Option A&#39;s core operational risk: 10,000 lb peak weeks exhaust 100% of single-line, overtime, and partner capacity, risking service-failure termination rather than cleanly proving capacity. C also ignores Option B&#39;s rejection risk and relies on unreserved Weeks 14–26 conditions and uncommitted Week 1 prospects without contingency guardrails.
+
+3. **What all five missed:** No additional gap identified. Together, A–E thoroughly cover cash stress tests, unit economics, peak bottlenecks, undefined contract terms, and negotiation paths.</div>
+    </details>
+    <details>
+      <summary>Reviewer 2 — Order BCDEA (Task ID: adde3a58-d165-48b1-9d54-da767a2c938e)</summary>
+      <div class="worker-body">1. **Strongest response: E.** E reframes the decision around monetizing idle regular capacity, showing Option A adds 13,800 pounds for just $435 incremental profit (~$0.03/lb) while exhausting peak capacity and breaching the $10,000 cash floor ($8,200 in Week 6 under delay). E derives the exact $1,800 minimum deposit needed to protect the floor, sets explicit Option A conditions (cash relief plus Week-13 exit or W14–26 overflow), gives a clean fallback to Option C, and pairs submitting Option B with checking W14–26 partner availability before September 6.
+
+2. **Biggest blind spot: C.** C emphasizes Option A’s 26-week amortization and stacking prospects onto Option B, but downplays that Option A runs at 100% single-line and partner peak capacity with zero downtime buffer and unreserved W14–26 overflow. Its stacking case depends on uncommitted prospects starting Week 1, and it omits signing conditions, fallbacks, and an 8-hour action.
+
+3. **Missed by all five:** None checked whether Maya would lower her $10,000 cash floor (to $8,200) if both Option B and Option A payment relief are refused.</div>
+    </details>
+    <details>
+      <summary>Reviewer 3 — Order CDEAB (Task ID: 3d6b3e15-9c83-4a9a-a7e1-aeafc7bc283a)</summary>
+      <div class="worker-body">1. **Strongest response: E.** E reframes the choice around monetizing idle regular capacity without sacrificing resilience, showing Option A earns only $435 more than Option B for 13,800 extra pounds (~$0.03/lb net) while adding $0.10/lb outsourced margin, an $8,200 cash breach under delay, and a 26-week lock-in. It sets clear conditions (propose B; sign A only with at least a $1,800 deposit or shorter lag plus a Week 13 exit or Weeks 14–26 overflow; else C) and pairs today&#39;s proposal with checking partner renewal before September 6.
+
+2. **Biggest blind spot: C.** C champions Option A&#39;s 26-week upside and B+C stacking while overlooking Option A&#39;s zero peak slack (10,000 lb on one line) and unhedged 26-week commitment without reserved later overflow. It also lacks fallback steps if Option B or payment concessions fail within Maya&#39;s 8-hour budget.
+
+3. **Missed by all five:** If the hotel rejects Option B for a single supplier, none suggest lowering Option A&#39;s **3,000 lb peak cap** (e.g., 2,500 lb flat) alongside cash and overflow fixes to eliminate the 10,000 lb bottleneck.</div>
+    </details>
+    <details>
+      <summary>Reviewer 4 — Order DEABC (Task ID: d6da2e70-d451-4c46-b71a-77835743e0a6)</summary>
+      <div class="worker-body">1. **Strongest response: E.** Both A and E accurately model cash troughs ($11,550 agreed and $8,200 delayed under A; $17,500 delayed under B), separate earnings from cash, and define clear conditional paths. E has the sharpest reasoning: it exposes Option A&#39;s weak unit economics ($435 net gain for 13,800 extra pounds, ~$0.03/lb, with outsourced peak pounds yielding $0.10/lb before admin fees), specifies exact relief ($1,800+ deposit or shorter payment lag) and Week 14–26 safeguards before signing A, and pairs submitting B with quietly checking partner capacity for Weeks 14–26—preserving negotiating leverage rather than signaling fallback terms on the initial hotel call.
+
+2. **Biggest blind spot: C.** While exploring valid upside (Weeks 14–26 amortization and stacking prospects onto B), C neglects resilience and downside constraints. It omits single-line breakdown and service-failure risk at 100% peak load under A (and at 9,600 lb peak under its B-stacking scenario), treats A&#39;s no-exit Weeks 14–26 lock-in as an earnings engine despite unreserved overflow, leaves its deposit/payment fix unquantified, and gives no fallback if B is rejected by September 6.
+
+3. **Missed by all five:** No additional gap identified.</div>
+    </details>
+    <details>
+      <summary>Reviewer 5 — Order EABCD (Task ID: 501fd10b-d34a-491a-bafb-56b4058a3d4e)</summary>
+      <div class="worker-body">**1. Strongest response: A**
+A integrates every constraint without inventing facts. It weighs Option A’s $435 profit edge over B ($10,000 vs. $9,565) against three blockers: breaching the $10,000 cash floor under delay ($9,750 Week 5; $8,200 Week 6), zero peak slack at 10,000 lb on one line, and unhedged Weeks 14–26 lock-in. Its conditional path (propose B by September 6; sign A only with a ≥$2,000 deposit or two-week terms plus Weeks 14–26 overflow; else C) and 2h/6h split of Maya’s 8 hours are actionable.
+
+**2. Biggest blind spot: C**
+C treats running 8,500–10,000 lb/week under A as &quot;operational optionality,&quot; missing single-line zero-slack breakdown and service-failure risks at peak. It ignores the risk that a single-supplier hotel rejects B, relies on unconfirmed Week 1 prospect conversion for its $16,380 stack, and omits any fallback if A’s concessions fail.
+
+**3. Missed by all five**
+None tested using part of Maya’s 8 hours before September 8 to seek binding start dates from C’s two 400 lb/week prospects. Together they yield $9,360 over 13 weeks with zero setup, zero overtime, and same-week cash—nearly matching B ($9,565) and defining what shifts the choice to C.</div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Execution Metadata</h2>
+    <p class="muted">Factory Droid CLI <code>1.16.0</code> &middot; Parent model: <code>Gemini 4 Hydrogen</code> (<code>sessionDefaultSettings.model: gemini-4-hydrogen</code>, <code>reasoningEffort: high</code>) &middot; Role configs: <code>model: inherit</code>, <code>tools: []</code>, <code>mcpServers: []</code> &middot; <code>complexity</code> and <code>resume</code> omitted on all dispatches &middot; Worker effective models: unverified (not exposed in <code>Task</code> output) &middot; Capture status: Coordinator copy &middot; Mapping: A=Executor, B=Outsider, C=Expansionist, D=Contrarian, E=First Principles Thinker.</p>
+  </section>
+</div>
+</body>
+</html>

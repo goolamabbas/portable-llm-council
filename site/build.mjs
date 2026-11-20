@@ -47,6 +47,14 @@ for (const path of ['index.html', 'sample/index.html', 'get-started/index.html']
 mkdirSync(resolve(output, 'assets'), { recursive: true });
 for (const filename of readdirSync(resolve(root, 'site/assets'))) copyFileSync(resolve(root, 'site/assets', filename), resolve(output, 'assets', filename));
 copyFileSync(resolve(root, example, 'council-report-20260928T231041Z.html'), resolve(output, 'sample/original-report.html'));
+const factoryExample = resolve(root, example, 'factory-droid');
+for (const [source, destination] of [
+  ['council-report-20261120T113220Z.html', 'factory-report.html'],
+  ['council-transcript-20261120T113220Z.md', 'factory-transcript.md'],
+  ['verification.md', 'factory-verification.md'],
+]) {
+  copyFileSync(resolve(factoryExample, source), resolve(output, 'sample', destination));
+}
 write('sample/transcript.md', transcript);
 write('sample/publication-review.md', read(example + 'publication-review.md'));
 write('sample/decision-brief.md', scenario);
