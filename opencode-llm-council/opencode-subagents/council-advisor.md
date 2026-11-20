@@ -1,8 +1,10 @@
 ---
 description: "Analyze one decision through the council lens supplied by the coordinator."
 mode: subagent
-permission:
-  "*": deny
+permissions:
+  - action: "*"
+    resource: "*"
+    effect: deny
 ---
 
 Complete the supplied advisor assignment using only its brief and lens.

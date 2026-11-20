@@ -6,7 +6,7 @@ The entire council can run in one supported assistant with one model. Portabilit
 
 The repository is the maintained source for installation, releases, and the website. The [sample records](examples/commercial-laundry/) preserve a fictional scenario evaluated in an actual council run, together with its review notes. See [website maintenance](site/README.md) to regenerate the pages.
 
-One shared skill for business and technical decisions, with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode, Factory Droid, and Claude Code**.
+One shared skill for business and technical decisions, with native subagent definitions for **Codex, Cursor, Command Code, Grok Build, OpenCode 2.x, Factory Droid, and Claude Code**.
 
 Five advisors examine a decision through different lenses, five fresh reviewers evaluate their anonymized answers, and a separate chair synthesizes a recommendation. The coordinator saves a self-contained HTML report and a Markdown transcript, including dispatch records, their capture status, and reviewer presentation orders.
 
@@ -54,7 +54,7 @@ The commands below install for your user account across projects. For availabili
 | Cursor | Same shared directory | `~/.cursor/agents/` | [Cursor notes](llm-council/references/cursor.md) |
 | Command Code | Same shared directory | `~/.commandcode/agents/` | [Command Code notes](llm-council/references/commandcode.md) |
 | Grok Build | Same shared directory | `~/.grok/agents/` | [Grok Build notes](llm-council/references/grok-build.md) |
-| OpenCode | Same shared directory | `~/.config/opencode/agents/` | [OpenCode notes](llm-council/references/opencode.md) |
+| OpenCode 2.x | Same shared directory | `~/.config/opencode/agents/` | [OpenCode notes](llm-council/references/opencode.md) |
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
 | Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude-code.md) |
 
@@ -74,8 +74,9 @@ In a supported harness, you can ask the assistant to handle installation:
 Read the installation instructions at
 https://github.com/goolamabbas/portable-llm-council
 and install the shared skill and the agent definitions for this AI assistant
-in my personal installation locations. Back up existing copies before
-replacing anything, then verify discovery. Do not run a council yet.
+in my personal installation locations. For OpenCode, check that the executing
+host runs 2.x before copying files. Back up existing copies before replacing
+anything, then verify discovery. Do not run a council yet.
 ```
 
 Your assistant may request approval for file changes. You may need to start a new session before it can verify discovery. Manual installation instructions follow below.
@@ -123,16 +124,18 @@ mkdir -p "$HOME/.grok/agents"
 cp -n grok-llm-council/grok-subagents/*.md "$HOME/.grok/agents/"
 ```
 
-**OpenCode**
+**OpenCode 2.x**
+
+Check `opencode --version` first. Proceed with these steps only if it reports 2.x. For a fresh installation in the default config directory:
 
 ```bash
 mkdir -p "$HOME/.config/opencode/agents"
 cp -n opencode-llm-council/opencode-subagents/*.md "$HOME/.config/opencode/agents/"
 ```
 
-OpenCode uses the shared skill directory. If its global config location is customized, use the resolved directory.
+If the config directory is customized, use its resolved location. For an upgrade, back up the three existing council role files, review local edits, and replace them with the three packaged definitions. The fresh-install command skips existing files. Refresh the shared skill as described above.
 
-This adapter targets the `permission` / `task` interface documented at the supplied `/docs/` URLs. The separate V2 documentation uses a different agent schema; inspect your version before installation. Workers request no tool access; the coordinating primary agent must load the shared assignments and supply complete inputs. See [execution and version limits](llm-council/references/opencode.md).
+Run `opencode debug agents` from your target project and look for `council-advisor`, `council-reviewer` and `council-chair`. See the [OpenCode 2.x execution notes](llm-council/references/opencode.md) for child sessions, permissions and result delivery.
 
 **Factory Droid**
 

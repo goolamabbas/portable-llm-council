@@ -1,8 +1,10 @@
 ---
 description: "Synthesize council answers and reviews into a decision recommendation."
 mode: subagent
-permission:
-  "*": deny
+permissions:
+  - action: "*"
+    resource: "*"
+    effect: deny
 ---
 
 Complete the supplied synthesis assignment using its brief, answers, and reviews.

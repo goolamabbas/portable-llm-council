@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 — 2026-11-20
+
+- OpenCode now requires 2.x. Package the V2 council roles and use background child reports to collect each round. Update the shared skill alongside existing role files when upgrading.
+
 ## 0.2.7 — 2026-11-20
 
 - Rename the Claude Code adapter reference to avoid instruction-file discovery on case-insensitive volumes. When upgrading an existing skill, remove the previous package-owned `references/claude.md` after backing up any local edits.

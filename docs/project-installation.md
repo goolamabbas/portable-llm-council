@@ -10,7 +10,7 @@ Copy the complete shared `llm-council/` folder, including references, into the s
 | Cursor | `.agents/skills/llm-council/` | `.cursor/agents/` | `cursor-llm-council/cursor-subagents/*.md` |
 | Command Code | `.agents/skills/llm-council/` | `.commandcode/agents/` | `commandcode-llm-council/commandcode-subagents/*.md` |
 | Grok Build | `.grok/skills/llm-council/` | `.grok/agents/` | `grok-llm-council/grok-subagents/*.md` |
-| OpenCode | `.agents/skills/llm-council/` | `.opencode/agents/` | `opencode-llm-council/opencode-subagents/*.md` |
+| OpenCode 2.x | `.agents/skills/llm-council/` | `.opencode/agents/` | `opencode-llm-council/opencode-subagents/*.md` |
 | Claude Code (including Desktop local Code) | `.claude/skills/llm-council/` | `.claude/agents/` | `claude-llm-council/claude-subagents/*.md` |
 | Factory Droid | `.agents/skills/llm-council/` | `.factory/droids/` | `droid-llm-council/droid-subagents/*.md` |
 
@@ -31,7 +31,7 @@ Start the harness in the target project and verify the resolved skill and all th
 
 Commit these target-project files if teammates should receive them; each teammate still needs the appropriate harness, model access, and permissions. On remote hosts, containers, or separate worktrees, ensure the files exist and are discovered where execution actually happens. Merely placing them in a local project does not deploy them remotely.
 
-The existing [harness execution notes](../README.md#supported-installations) still apply, including OpenCode's version boundary and Factory's mandatory tools.
+The existing [harness execution notes](../README.md#supported-installations) still apply, including the OpenCode 2.x requirement and Factory's mandatory tools.
 
 ## Official references
 
@@ -39,6 +39,6 @@ The existing [harness execution notes](../README.md#supported-installations) sti
 - Cursor: [skills](https://cursor.com/docs/skills), [subagents](https://cursor.com/docs/subagents).
 - Command Code: [skills](https://commandcode.ai/docs/skills), [agents](https://commandcode.ai/docs/agents).
 - Grok Build: [skills](https://docs.x.ai/build/features/skills-plugins-marketplaces), [agent profiles and file locations](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-shell/README.md).
-- OpenCode: [skills](https://opencode.ai/docs/skills/), [agents](https://opencode.ai/docs/agents/).
+- OpenCode: [skills](https://opencode.ai/v2/docs/skills), [agents](https://opencode.ai/v2/docs/agents).
 - Factory Droid: [skills](https://docs.factory.ai/harness/skills), [subagents](https://docs.factory.ai/harness/subagents).
 - Claude Code: [skills](https://code.claude.com/docs/en/skills), [subagents](https://code.claude.com/docs/en/sub-agents), [Desktop](https://code.claude.com/docs/en/desktop).

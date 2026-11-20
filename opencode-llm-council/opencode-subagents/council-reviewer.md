@@ -1,8 +1,10 @@
 ---
 description: "Evaluate anonymized council answers in a fresh context."
 mode: subagent
-permission:
-  "*": deny
+permissions:
+  - action: "*"
+    resource: "*"
+    effect: deny
 ---
 
 Complete the supplied review assignment using only its brief and anonymized answers.

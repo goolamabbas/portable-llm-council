@@ -1,25 +1,19 @@
-# OpenCode execution notes
+# OpenCode 2.x execution notes
 
-Use this adapter with the `permission` / `task` interface in the supplied [agents documentation](https://opencode.ai/docs/agents/). The separate [V2 interface](https://opencode.ai/v2/docs/agents) uses `permissions` rules and `subagent`; these files do not target that schema. Verify the active version before use.
+Check `opencode --version` on the executing host. This adapter requires major version 2.
 
-## Discovery and model settings
+## Installation and discovery
 
-Select registered `council-advisor`, `council-reviewer`, and `council-chair`. Filenames define role names; YAML frontmatter sets `mode: subagent`. Omit `model` to inherit the invoking primary agent's model. For an intentional per-role override, use a supported `provider/model-id` in that role's `model` field. No model or reasoning override is supplied. Record effective settings when exposed. [Agent configuration](https://opencode.ai/docs/agents/)
+Install the shared skill once in `~/.agents/skills/llm-council/` and the three Markdown role files in the OpenCode config directory’s `agents/` folder (normally `~/.config/opencode/agents/`). For project scope, use `.agents/skills/llm-council/` and `.opencode/agents/`. Run `opencode debug agents` in the target project to check that `council-advisor`, `council-reviewer` and `council-chair` resolve as subagents. Check skill discovery in a fresh session. If the client connects to a remote server, verify the files on the executing host.
 
-## Dispatch and fresh context
+## Workers and permissions
 
-Inspect the live `task` schema. Supply `subagent_type`, a short `description`, and the complete relevant [assignment](subagents.md#dispatch-templates-and-records) plus its required inputs. Omit `task_id` for every new worker; it resumes an existing session. The inspected implementation creates a child session and sends the supplied prompt rather than copying parent messages. This is source inspection, not proof of all runtime isolation: project instructions, plugins, or prompt expansion may add context. Keep mappings and prior reviews out of shared instructions and worker inputs. [Task implementation](https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/tool/task.ts)
+The coordinator loads the shared skill. The role filenames supply agent IDs and each body supplies its role instructions. The bundled roles omit a model preference so the children can inherit the parent's model. Record the observed settings when available. Each role requests a wildcard deny rule in its ordered `permissions` list. Check merged permissions when project overrides or plugins are present. The primary agent needs permission to launch the three roles and save the artifacts. Project instructions and other context can still reach workers. Follow the shared skill's guidance on ambient context and isolation.
 
-## Completion
+## Dispatch and completion
 
-Run independent calls concurrently when supported, otherwise use fresh sequential runs or batches. No fixed concurrency guarantee is assumed. Prefer foreground completion. Collect five final advisor texts before anonymizing, five fresh reviews before dispatching the chair, and the chair's final verdict before writing completed-council artifacts. If recovery is impossible, follow the shared skill's incomplete-artifact instructions. An ID, running status, empty answer, cancellation, or error is not completion. The inspected source gates asynchronous `background` behind an experimental flag and delivers completion notifications; use it only if already enabled and exposed, without polling or enabling flags. The linked implementation tracks `dev`; use the lifecycle exposed by your installed version. [Task implementation](https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/tool/task.ts)
+Use the active V2 `subagent` tool. Launch a fresh child for each slot, select its named role and send its complete [assignment and input packet](subagents.md#dispatch-templates-and-records). Keep the mapping and other reviews out of reviewer inputs. Children run in the background. When a child goes idle, the parent receives a report. Match each report to its slot and collect the final answer. An idle event or progress message alone is insufficient.
 
-## Tool settings and limits
+Collect all five advisor answers before dispatching the five fresh reviewers. Collect all five reviews before dispatching the separate chair. If capacity is limited, use independent batches. For a missing result, use recovery supported by the active harness and the shared skill’s incomplete-run rules. Keep capture status and remaining uncertainties in the transcript.
 
-Workers request `permission: {"*": "deny"}` so they analyze supplied material and return text without tools, including file reads, MCP calls, and nested delegation. The coordinator gathers evidence, loads the skill/references, and writes artifacts. Agent rules override global rules; merged configuration or plugins still require inspection. This is a tool policy, not an OS sandbox or a guarantee that contextual instructions are absent. If roles, fresh contexts, or required permissions are unavailable, report an incomplete stage; do not silently substitute an unrestricted role or weaken policy. The coordinator needs skill/read access, permission to dispatch the three roles, and permission to save artifacts. [Permissions](https://opencode.ai/docs/permissions/)
-
-## Installation and host
-
-The existing `~/.agents/skills/llm-council/` is discoverable directly. OpenCode also documents `.agents/skills/`, `.opencode/skills/`, `~/.config/opencode/skills/`, and Claude-compatible skill directories. Keep one active copy; discovery can be affected by permissions or duplicates. The shared uppercase `SKILL.md` already has the required matching name and description. [Skill discovery](https://opencode.ai/docs/skills/)
-
-Install roles on the executing host under `~/.config/opencode/agents/` (default global location) or `.opencode/agents/` for a project. Use the resolved config directory if customized. OpenCode's TUI connects to a server; for a remote server, verify files and discovery there. Local configuration does not imply local model inference. Do not transfer files, switch hosts, or change personal settings merely to complete a run. [Client/server operation](https://opencode.ai/docs/server/)
+Sources: [OpenCode 2.x agents](https://opencode.ai/v2/docs/agents) and [skill discovery](https://opencode.ai/v2/docs/skills).
