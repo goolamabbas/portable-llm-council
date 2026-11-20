@@ -2,7 +2,7 @@
 
 **[Explore the website](https://goolamabbas.github.io/portable-llm-council/)** · **[Read an actual council example](https://goolamabbas.github.io/portable-llm-council/sample/)**
 
-The entire council can run in one supported assistant with one model. Portability means choosing a harness, not combining subscriptions.
+The entire council can run in one supported assistant with one model. You choose which supported AI assistant runs the council.
 
 The repository is the maintained source for installation, releases, and the website. The [sample records](examples/commercial-laundry/) preserve two complete council runs on the same fictional brief, with the original reports and verification notes. See [website maintenance](site/README.md) to regenerate the pages.
 
