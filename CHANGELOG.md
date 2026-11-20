@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7 — 2026-11-20
+
+- Rename the Claude Code adapter reference to avoid instruction-file discovery on case-insensitive volumes. When upgrading an existing skill, remove the previous package-owned `references/claude.md` after backing up any local edits.
+- Follow the active Factory task lifecycle and collect each final answer before the next round.
+- Connect the Outsider’s observations to the owner’s decision and correct the Get Started link to the ClearFold brief.
+
 ## 0.2.6 — 2026-09-29
 
 - Give advisors a 200–400 word target, with up to 500 for consequential detail; retain concise reviews.

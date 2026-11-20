@@ -56,7 +56,7 @@ The commands below install for your user account across projects. For availabili
 | Grok Build | Same shared directory | `~/.grok/agents/` | [Grok Build notes](llm-council/references/grok-build.md) |
 | OpenCode | Same shared directory | `~/.config/opencode/agents/` | [OpenCode notes](llm-council/references/opencode.md) |
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
-| Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude.md) |
+| Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude-code.md) |
 
 These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
 
@@ -169,7 +169,7 @@ cp -n claude-llm-council/claude-subagents/*.md "$HOME/.claude/agents/"
 
 Refresh an older shared skill before linking it. Claude supports skill-directory symlinks; copy the whole folder when symlinks are unsuitable. There is no separate Claude SKILL.md. [Claude skill discovery](https://code.claude.com/docs/en/skills)
 
-The supplied roles request no tools and omit ordinary project instructions with `omitClaudeMd: true` (Claude Code v2.1.271+); managed policy still applies. They return analysis from the coordinator's inputs. Read the [Claude execution notes](llm-council/references/claude.md) for fresh-worker dispatch and ambient-instruction limits. If another installed harness also discovers `.claude` directories, check which same-named role it resolves; do not assume this installation is invisible to it.
+The supplied roles request no tools and omit ordinary project instructions with `omitClaudeMd: true` (Claude Code v2.1.271+); managed policy still applies. They return analysis from the coordinator's inputs. Read the [Claude execution notes](llm-council/references/claude-code.md) for fresh-worker dispatch and ambient-instruction limits. If another installed harness also discovers `.claude` directories, check which same-named role it resolves; do not assume this installation is invisible to it.
 
 Restart the harness or start a new session, then verify that it discovers the intended skill and all three native roles. Files on disk alone do not establish registration. The optional `llm-council/agents/openai.yaml` provides Codex presentation metadata; it is not a worker definition.
 

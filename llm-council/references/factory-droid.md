@@ -4,11 +4,11 @@ This adapter maps the shared council assignments to Factory capabilities. The re
 
 ## Dispatch and fresh context
 
-Select registered `council-advisor`, `council-reviewer`, and `council-chair` through `Task`, supplying `subagent_type`, `description`, and a self-contained `prompt`. Inspect the live schema first. New invocations have fresh contexts; omit `resume`, which preserves history. Concurrent Task calls are supported. Foreground calls return final text; background calls use `run_in_background: true` and return `task_id`. Retrieve results with `TaskOutput(task_id, block=true)`. [Subagents](https://docs.factory.ai/harness/subagents)
+Select registered `council-advisor`, `council-reviewer`, and `council-chair` through `Task`, supplying `subagent_type`, `description`, and a self-contained `prompt`. Check the active tool schema for supported parameters and how final results arrive. Start a fresh task for each worker and omit `resume`, which preserves history. Dispatch independent tasks in the same round concurrently where supported. [Subagents](https://docs.factory.ai/harness/subagents)
 
 ## Completion
 
-Send the complete relevant [assignment](subagents.md#dispatch-templates-and-records) and required inputs every time. Create five advisors, five new reviewers, then one chair, with the shared round barriers. Choose concurrent foreground calls or background dispatch according to the active runtime and other coordinator work; the method does not prefer one lifecycle. Keep every task ID and collect actual final text. A progress update, notification, timeout, or missing answer is not a completed round. Batch when capacity requires it; no fixed concurrency limit is assumed. Never resume an advisor into review. If roles or isolation are unavailable, report the incomplete stage rather than substituting an unrestricted worker.
+Send the complete relevant [assignment](subagents.md#dispatch-templates-and-records) and required inputs every time. Create five advisors, five new reviewers, then one chair, with the shared round barriers. Keep each task ID the host exposes and collect the final text for every slot before starting the next round. If the host delivers final answers automatically, wait for that delivery. If a call returns the answer directly, use it. When a result is missing, use the status or retrieval mechanism documented by the active tools. An ID, progress notice, or timeout alone leaves the slot outstanding. Batch when capacity requires it; no fixed concurrency limit is assumed. Never resume an advisor into review. If roles or isolation are unavailable, report the incomplete stage rather than substituting an unrestricted worker.
 
 ## Model settings
 
