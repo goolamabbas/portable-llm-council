@@ -58,13 +58,30 @@ The commands below install for your user account across projects. For availabili
 | Factory Droid | Same shared directory | `~/.factory/droids/` | [Droid notes](llm-council/references/factory-droid.md) |
 | Claude Code / Desktop local Code | `~/.claude/skills/llm-council/` | `~/.claude/agents/` | [Claude notes](llm-council/references/claude-code.md) |
 
-These are the current adapter targets; future releases may add more. Claude support covers Claude Code and local Code sessions in Claude Desktop. Cowork, ordinary Claude Chat, and ordinary Grok chat are not supported installation targets. The maintainer has tested the council across the listed harnesses. Behavior can vary with harness versions, models, and settings; follow the installation check below in your own environment.
+### Choose where to run the council
 
-### Codex and ChatGPT desktop
+The shared skill supplies the method. The assistant running it must also be able to delegate to separate workers and collect their answers. Install on the computer or server running the session. A skill appearing in a menu confirms only the first part.
 
-The Codex adapter covers local Codex workflows in the ChatGPT desktop app, CLI, and IDE extension. Keep the Codex installation paths above; the app name does not change the native role format.
+<a id="codex-and-chatgpt-desktop"></a>
 
-OpenAI also documents subagent workflows in ChatGPT Work for eligible accounts. This package’s installation, custom-role discovery, and full council workflow in ChatGPT Work remain unverified. Hosted Work should not be assumed to load local `~/.codex/agents/` files. See [OpenAI’s subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents?surface=app).
+<!-- council-surfaces:start -->
+<p><strong>Claude Desktop.</strong> Open <strong>Code</strong> and select your local computer. Use the same installation instructions as for the Claude Code CLI. Anthropic is rolling out a unified Chat and Cowork conversation; the Code tab stays in place. This release supplies local Claude Code files. Use the Code tab for this release. Loading its three local role files from the unified conversation or the earlier Chat and Cowork views is outside the verified scope. <a href="https://code.claude.com/docs/en/desktop">Claude Code Desktop</a> · <a href="https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude">Anthropic’s rollout note</a></p>
+
+<p><strong>ChatGPT desktop.</strong> Choose <strong>Codex</strong> and open a local project. The Codex installation also applies to the local CLI and IDE extension. ChatGPT Work can delegate tasks, and Chat and Work can use plugin skills. Discovery of this release’s local Codex role files and a complete council run in either Chat or Work remain unverified. <a href="https://developers.openai.com/codex/app">Desktop navigation</a> · <a href="https://learn.chatgpt.com/docs/agent-configuration/subagents?surface=app">OpenAI subagents</a></p>
+
+<details>
+<summary>Cursor, Command Code, Grok Build, OpenCode and Factory Droid</summary>
+<ul>
+<li><strong>Cursor.</strong> Use Agent in the editor or the CLI with the project that contains or inherits the installation. Cursor also documents subagents in Cloud Agents. A cloud worker needs its own access to the skill and roles; this guide has no separate cloud council result. <a href="https://cursor.com/docs/subagents">Cursor subagents</a></li>
+<li><strong>Command Code.</strong> Use a local CLI project with the three council agents registered. Command Code Desktop has its own built-in runtime; this guide has no separate Desktop validation for the council. <a href="https://commandcode.ai/docs/desktop">Command Code Desktop</a></li>
+<li><strong>Grok Build.</strong> Use the Grok Build terminal session with its subagent profiles. The installation targets Grok Build. Ordinary Grok chat is outside its scope. <a href="https://docs.x.ai/build/features/skills-plugins-marketplaces">Grok Build extensions</a></li>
+<li><strong>OpenCode.</strong> Use a 2.x host. The release check completed a council through the 2.3.2 CLI. Desktop and web clients also exist; if connecting to a server, verify the skill and roles on that server. <a href="https://opencode.ai/v2/docs">OpenCode clients</a> · <a href="https://github.com/goolamabbas/portable-llm-council/releases/tag/v0.3.0">Release check</a></li>
+<li><strong>Factory Droid.</strong> Use a Droid session that discovers the custom droids and exposes the Task tool. The local CLI is a starting point. Factory also offers app and remote sessions; check which machine runs Droid and whether it sees the installation there. <a href="https://docs.factory.ai/docs">Factory surfaces</a> · <a href="https://docs.factory.ai/harness/subagents">Custom droids</a></li>
+</ul>
+</details>
+<!-- council-surfaces:end -->
+
+On the maintainer’s machine, local Codex in ChatGPT desktop exposed the shared skill and all three named roles. The [ClearFold example](examples/commercial-laundry/) records a full Claude Code council; its record does not specify the Desktop interface. To check your installation, confirm the active session can discover the skill and select all three native roles. A full run additionally checks that the workers receive their assignments and return their answers.
 
 ### Ask your assistant to install
 
@@ -73,8 +90,10 @@ In a supported harness, you can ask the assistant to handle installation:
 ```text
 Read the installation instructions at
 https://github.com/goolamabbas/portable-llm-council
-and install the shared skill and the agent definitions for this AI assistant
-in my personal installation locations. For OpenCode, check that the executing
+and identify the assistant and environment running this session. If the guide
+covers this installation, install the shared skill and the three matching roles
+in my personal installation locations. If the environment is unclear, tell me
+which session to open before copying files. For OpenCode, check that the executing
 host runs 2.x before copying files. Back up existing copies before replacing
 anything, then verify discovery. Do not run a council yet.
 ```

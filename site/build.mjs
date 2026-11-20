@@ -25,7 +25,12 @@ function promptStarting(prefix) {
   return found[0];
 }
 
+// The README and Get Started use the same surface guidance, including vendor links.
+const surfaces = readme.match(/<!-- council-surfaces:start -->\s*([\s\S]*?)\s*<!-- council-surfaces:end -->/);
+if (!surfaces) throw new Error('Missing installation surface guidance in README');
+
 const replacements = {
+  COUNCIL_SURFACES: surfaces[1],
   SCENARIO: escape(scenario),
   INSTALL_PROMPT: escape(promptStarting('Read the installation instructions at')),
   DISCOVERY_PROMPT: escape(promptStarting('Check whether you discover the llm-council skill')),
